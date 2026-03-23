@@ -444,6 +444,216 @@
       transition: background 0.1s;
     }
     .modal-close:hover { background: var(--bg-elevated); color: var(--text-secondary); }
+
+    /* ─── RESUMEN EJECUTIVO ──────────────────────────────── */
+    .ai-banner {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 16px 20px;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .ai-banner-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--text-primary);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .ai-banner-sup {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .ai-banner-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.2px;
+      margin-bottom: 5px;
+    }
+    .ai-banner-text {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 680px;
+    }
+    .ai-banner-date {
+      font-size: 11px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-top: 2px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .kpi-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 16px 18px 12px;
+      display: flex;
+      flex-direction: column;
+    }
+    .kpi-card-label {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .kpi-card-value {
+      font-size: 28px;
+      font-weight: 600;
+      font-family: 'DM Mono', monospace;
+      color: var(--text-primary);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      margin-top: 6px;
+    }
+    .kpi-card-value span {
+      font-size: 16px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+    .kpi-card-delta {
+      font-size: 11px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    .kpi-card-delta.green { color: var(--green); }
+    .kpi-card-delta.amber { color: var(--amber); }
+    .kpi-card-delta.red   { color: var(--red); }
+    .kpi-card-delta.muted { color: var(--text-tertiary); }
+    .kpi-sparkline { margin-top: 12px; }
+
+    .resumen-bottom {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 12px;
+    }
+    .card-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+    }
+    .card-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .card-panel-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .card-panel-action {
+      font-size: 11.5px;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background 0.1s, color 0.1s;
+    }
+    .card-panel-action:hover { background: var(--bg-elevated); color: var(--text-secondary); }
+
+    .feed-list { padding: 4px 0; }
+    .feed-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 16px;
+      transition: background 0.1s;
+      cursor: default;
+    }
+    .feed-item:hover { background: var(--bg-elevated); }
+    .feed-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .feed-content { flex: 1; min-width: 0; }
+    .feed-title {
+      font-size: 12.5px;
+      color: var(--text-primary);
+      line-height: 1.4;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .feed-sub { font-size: 11px; color: var(--text-tertiary); margin-top: 1px; }
+    .feed-time {
+      font-size: 10.5px;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding-top: 3px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .event-list { padding: 4px 0; }
+    .event-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 16px;
+      transition: background 0.1s;
+      cursor: default;
+    }
+    .event-item:hover { background: var(--bg-elevated); }
+    .event-date-badge { width: 32px; text-align: center; flex-shrink: 0; padding-top: 1px; }
+    .event-date-day {
+      font-size: 18px;
+      font-weight: 600;
+      font-family: 'DM Mono', monospace;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+    .event-date-mon {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .event-content { flex: 1; min-width: 0; }
+    .event-title { font-size: 12.5px; color: var(--text-primary); line-height: 1.4; }
+    .event-meta { font-size: 11px; color: var(--text-tertiary); margin-top: 1px; }
+    .event-tag {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .tag-urgent  { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-border);    }
+    .tag-meeting { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-border);   }
+    .tag-delivery{ background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border);  }
   </style>
 </head>
 <body>
@@ -618,14 +828,242 @@
 
       <!-- SECCIÓN 1: Resumen Ejecutivo -->
       <section id="section-resumen" class="section active">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-            <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
-          </svg>
-          <p>Resumen Ejecutivo</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <!-- AI Banner -->
+        <div class="ai-banner">
+          <div class="ai-banner-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div class="ai-banner-sup">Zaguán IA · Análisis del día</div>
+            <div class="ai-banner-title" id="ai-greeting-title">Cargando…</div>
+            <p class="ai-banner-text">Arrancas la semana con buenas perspectivas. Hay <strong>2 presupuestos pendientes</strong> por un total de <strong>18.200€</strong> — el de Altafit vence el miércoles. Eduardo tiene carga alta esta semana; considera redistribuir tareas antes del martes.</p>
+          </div>
+          <div class="ai-banner-date" id="ai-greeting-date"></div>
         </div>
+
+        <!-- KPI Grid -->
+        <div class="kpi-grid">
+
+          <div class="kpi-card">
+            <div class="kpi-card-label">MRR</div>
+            <div class="kpi-card-value">12.400€</div>
+            <div class="kpi-card-delta green">↑ +8% vs mes anterior</div>
+            <div class="kpi-sparkline">
+              <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
+                <polyline points="0,22 11,18 22,22 33,14 44,18 55,8 66,14 77,4 88,8 100,4"
+                  fill="none" stroke="var(--green)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-card-label">Proyectos activos</div>
+            <div class="kpi-card-value">7</div>
+            <div class="kpi-card-delta amber">⚠ 2 en zona de riesgo</div>
+            <div class="kpi-sparkline">
+              <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
+                <polyline points="0,21 14,11 28,21 42,11 57,4 71,11 85,11 100,11"
+                  fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-card-label">Presupuestos pendientes</div>
+            <div class="kpi-card-value">18.200€</div>
+            <div class="kpi-card-delta red">⏱ 1 vence el miércoles</div>
+            <div class="kpi-sparkline">
+              <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
+                <polyline points="0,21 14,11 28,25 42,7 57,11 71,4 85,16 100,11"
+                  fill="none" stroke="var(--red)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-card-label">Score empresa</div>
+            <div class="kpi-card-value">74<span>/100</span></div>
+            <div class="kpi-card-delta muted">↓ 6 pts esta semana</div>
+            <div class="kpi-sparkline">
+              <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
+                <polyline points="0,4 12,7 25,11 37,4 50,16 62,11 75,21 87,16 100,22"
+                  fill="none" stroke="var(--border-strong)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+        </div><!-- /kpi-grid -->
+
+        <!-- Feed + Eventos -->
+        <div class="resumen-bottom">
+
+          <!-- Feed de actividad -->
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <span class="card-panel-title">Actividad reciente</span>
+              <span class="card-panel-action">Ver todo</span>
+            </div>
+            <div class="feed-list">
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--blue-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">Presupuesto enviado a Biplaza</div>
+                  <div class="feed-sub">Diseño web corporativa · 4.800€</div>
+                </div>
+                <div class="feed-time">09:42</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--green-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">Factura cobrada: Inmobiliaria Torres</div>
+                  <div class="feed-sub">2.400€ · Proyecto SEO trimestral</div>
+                </div>
+                <div class="feed-time">Ayer</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--purple-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">Proyecto "Web Simyo" actualizado</div>
+                  <div class="feed-sub">Eduardo · 3 tareas completadas</div>
+                </div>
+                <div class="feed-time">Ayer</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--green-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">Nuevo cliente: Restaurante La Masia</div>
+                  <div class="feed-sub">Alta en CRM · Origen: referral</div>
+                </div>
+                <div class="feed-time">Ayer</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--amber-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">Alerta: Proyecto Altafit sin avance</div>
+                  <div class="feed-sub">Sin actualización en 5 días</div>
+                </div>
+                <div class="feed-time">Vie</div>
+              </div>
+
+              <div class="feed-item">
+                <div class="feed-dot" style="background:var(--blue-bg);">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"/>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                </div>
+                <div class="feed-content">
+                  <div class="feed-title">MRR superó 12.000€ por primera vez</div>
+                  <div class="feed-sub">Hito alcanzado · Récord mensual</div>
+                </div>
+                <div class="feed-time">Vie</div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Próximos eventos -->
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <span class="card-panel-title">Próximos eventos</span>
+              <span class="card-panel-action">Calendario</span>
+            </div>
+            <div class="event-list">
+
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <div class="event-date-day">23</div>
+                  <div class="event-date-mon">Mar</div>
+                </div>
+                <div class="event-content">
+                  <div class="event-title">Reunión Biplaza</div>
+                  <div class="event-meta">16:00 · Videollamada</div>
+                </div>
+                <span class="event-tag tag-meeting">Hoy</span>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <div class="event-date-day">24</div>
+                  <div class="event-date-mon">Mar</div>
+                </div>
+                <div class="event-content">
+                  <div class="event-title">Entrega proyecto Simyo</div>
+                  <div class="event-meta">10:00 · Milestone</div>
+                </div>
+                <span class="event-tag tag-delivery">Mañana</span>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <div class="event-date-day">25</div>
+                  <div class="event-date-mon">Mar</div>
+                </div>
+                <div class="event-content">
+                  <div class="event-title">Vence presupuesto Altafit</div>
+                  <div class="event-meta">Todo el día · Presupuesto</div>
+                </div>
+                <span class="event-tag tag-urgent">Urgente</span>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <div class="event-date-day">26</div>
+                  <div class="event-date-mon">Mar</div>
+                </div>
+                <div class="event-content">
+                  <div class="event-title">Revisión de equipo mensual</div>
+                  <div class="event-meta">11:00 · Oficina</div>
+                </div>
+              </div>
+
+              <div class="event-item">
+                <div class="event-date-badge">
+                  <div class="event-date-day">28</div>
+                  <div class="event-date-mon">Mar</div>
+                </div>
+                <div class="event-content">
+                  <div class="event-title">Friday Report — Semana 13</div>
+                  <div class="event-meta">18:00 · Generación automática</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div><!-- /resumen-bottom -->
+
       </section>
 
       <!-- SECCIÓN 2: Visor 360° -->
@@ -811,6 +1249,22 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeFridayReport();
   });
+
+  // AI greeting dinámico
+  (function() {
+    const h = new Date().getHours();
+    const saludo = h < 13 ? 'Buenos días' : h < 20 ? 'Buenas tardes' : 'Buenas noches';
+    const el = document.getElementById('ai-greeting-title');
+    if (el) el.textContent = saludo + ', José.';
+
+    const dateEl = document.getElementById('ai-greeting-date');
+    if (dateEl) {
+      const dias  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+      const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+      const now = new Date();
+      dateEl.textContent = dias[now.getDay()] + ' ' + now.getDate() + ' ' + meses[now.getMonth()];
+    }
+  })();
 </script>
 </body>
 </html>
