@@ -1310,10 +1310,42 @@
             <canvas id="chart-pres-bar" height="158"></canvas>
           </div>
           <div class="exec-chart-panel">
-            <div class="exec-chart-title">Distribución por estado</div>
-            <div style="display:flex;align-items:center;gap:18px;margin-top:6px;">
-              <canvas id="chart-pres-donut" width="118" height="118" style="flex-shrink:0;"></canvas>
-              <div id="pres-legend" class="donut-legend" style="flex:1;"></div>
+            <div class="exec-chart-title">Ticket medio por estado</div>
+            <div style="display:flex;flex-direction:column;gap:9px;margin-top:10px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:11.5px;color:var(--text-secondary);width:88px;flex-shrink:0;">Negociando</span>
+                <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:100%;height:5px;border-radius:3px;background:var(--amber);"></div></div>
+                <span style="font-size:11.5px;font-family:'DM Mono',monospace;color:var(--text-primary);font-weight:600;width:46px;text-align:right;flex-shrink:0;">5.867€</span>
+                <span style="font-size:10px;color:var(--text-tertiary);width:14px;flex-shrink:0;">×3</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:11.5px;color:var(--text-secondary);width:88px;flex-shrink:0;">Enviado</span>
+                <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:47%;height:5px;border-radius:3px;background:var(--blue);"></div></div>
+                <span style="font-size:11.5px;font-family:'DM Mono',monospace;color:var(--text-primary);font-weight:600;width:46px;text-align:right;flex-shrink:0;">2.790€</span>
+                <span style="font-size:10px;color:var(--text-tertiary);width:14px;flex-shrink:0;">×4</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:11.5px;color:var(--text-secondary);width:88px;flex-shrink:0;">Aceptado</span>
+                <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:36%;height:5px;border-radius:3px;background:var(--green);"></div></div>
+                <span style="font-size:11.5px;font-family:'DM Mono',monospace;color:var(--text-primary);font-weight:600;width:46px;text-align:right;flex-shrink:0;">2.090€</span>
+                <span style="font-size:10px;color:var(--text-tertiary);width:14px;flex-shrink:0;">×4</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:11.5px;color:var(--text-secondary);width:88px;flex-shrink:0;">Rechazado</span>
+                <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:27%;height:5px;border-radius:3px;background:var(--red);"></div></div>
+                <span style="font-size:11.5px;font-family:'DM Mono',monospace;color:var(--text-primary);font-weight:600;width:46px;text-align:right;flex-shrink:0;">1.580€</span>
+                <span style="font-size:10px;color:var(--text-tertiary);width:14px;flex-shrink:0;">×2</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:10px;">
+                <span style="font-size:11.5px;color:var(--text-secondary);width:88px;flex-shrink:0;">Borrador</span>
+                <div style="flex:1;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:17%;height:5px;border-radius:3px;background:var(--text-tertiary);"></div></div>
+                <span style="font-size:11.5px;font-family:'DM Mono',monospace;color:var(--text-primary);font-weight:600;width:46px;text-align:right;flex-shrink:0;">1.000€</span>
+                <span style="font-size:10px;color:var(--text-tertiary);width:14px;flex-shrink:0;">×2</span>
+              </div>
+              <div style="margin-top:6px;padding-top:9px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+                <span style="font-size:11px;color:var(--text-tertiary);">Ticket medio global (15 pres.)</span>
+                <span style="font-size:13px;font-family:'DM Mono',monospace;font-weight:600;color:var(--text-primary);">2.819€</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1692,13 +1724,11 @@
     {cliente:'Clínica Bellvitge',desc:'SEO médico — renovación',       imp:960,  fecha:'20 feb',estado:'rechazado',  resp:'JR',dias:31},
   ];
   // Presupuestos executive charts
-  let _presBarChart = null, _presDonutChart = null;
+  let _presBarChart = null;
   function initPresCharts() {
-    if (_presBarChart)  { _presBarChart.destroy();  _presBarChart  = null; }
-    if (_presDonutChart){ _presDonutChart.destroy(); _presDonutChart= null; }
-    const barCtx   = document.getElementById('chart-pres-bar');
-    const donutCtx = document.getElementById('chart-pres-donut');
-    if (!barCtx || !donutCtx) return;
+    if (_presBarChart) { _presBarChart.destroy(); _presBarChart = null; }
+    const barCtx = document.getElementById('chart-pres-bar');
+    if (!barCtx) return;
     const colors  = ['#9b9b8f','#2563eb','#d97706','#16a34a','#dc2626'];
     const labels  = ['Borrador','Enviado','Negociando','Aceptado','Rechazado'];
     const counts  = [2, 4, 3, 4, 2];
@@ -1715,15 +1745,6 @@
         }
       }
     });
-    _presDonutChart = new Chart(donutCtx, {
-      type:'doughnut',
-      data:{ labels, datasets:[{ data:counts, backgroundColor:colors, borderWidth:3, borderColor:'#ffffff' }] },
-      options:{ responsive:false, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}`}} } }
-    });
-    const legendEl = document.getElementById('pres-legend');
-    if (legendEl) legendEl.innerHTML = labels.map((l,i)=>
-      `<div class="dl-row"><div class="dl-dot" style="background:${colors[i]};"></div><div class="dl-label">${l}</div><div class="dl-count">${counts[i]}&nbsp;</div><div class="dl-amount">${amounts[i].toLocaleString('es-ES')}€</div></div>`
-    ).join('');
   }
 
   // IA Status module
