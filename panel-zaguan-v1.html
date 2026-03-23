@@ -733,52 +733,50 @@
     .ai-panel-body   { padding: 16px; }
     .ai-insight-text { font-size: 12.5px; color: var(--text-secondary); line-height: 1.72; }
 
-    /* ─── PRESUPUESTOS ──────────────────────────────── */
-    .section-topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; gap:12px; flex-wrap:wrap; }
-    .filter-tabs    { display:flex; gap:4px; flex-wrap:wrap; }
-    .filter-tab {
-      display:inline-flex; align-items:center; gap:5px; padding:5px 10px; border-radius:6px;
-      border:1px solid var(--border); background:var(--bg-surface);
-      font-size:12px; color:var(--text-secondary); cursor:pointer; transition:all .12s; user-select:none;
-    }
-    .filter-tab:hover { background:var(--bg-elevated); color:var(--text-primary); }
-    .filter-tab.active { background:var(--text-primary); color:#fff; border-color:var(--text-primary); }
-    .filter-tab.active .ftab-count { background:rgba(255,255,255,.2); color:#fff; }
-    .ftab-count { font-size:10px; font-family:'DM Mono',monospace; background:var(--bg-elevated); color:var(--text-tertiary); padding:1px 5px; border-radius:8px; }
-    .search-wrap { display:flex; align-items:center; gap:8px; }
-    .search-box {
-      display:flex; align-items:center; gap:6px; border:1px solid var(--border); border-radius:6px;
-      background:var(--bg-surface); padding:5px 10px; transition:border-color .15s;
-    }
-    .search-box:focus-within { border-color:var(--border-strong); }
-    .search-box input { border:none; outline:none; background:transparent; font-size:12.5px; font-family:'DM Sans',sans-serif; color:var(--text-primary); width:170px; }
-    .search-box input::placeholder { color:var(--text-tertiary); }
+    /* ─── PRESUPUESTOS EJECUTIVO ─────────────────────── */
+    .exec-kpi-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:22px; }
+    .exec-kpi { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; padding:18px 20px; }
+    .exec-kpi-label { font-size:10.5px; font-weight:500; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+    .exec-kpi-val   { font-size:28px; font-weight:600; font-family:'DM Mono',monospace; color:var(--text-primary); letter-spacing:-1px; line-height:1; }
+    .exec-kpi-sub   { font-size:11.5px; color:var(--text-secondary); margin-top:6px; }
+    .exec-kpi-delta { font-size:11px; font-weight:500; margin-top:4px; }
+    .exec-kpi-delta.green { color:var(--green); } .exec-kpi-delta.amber { color:var(--amber); } .exec-kpi-delta.muted { color:var(--text-tertiary); }
+    .exec-charts-row { display:grid; grid-template-columns:1fr 278px; gap:12px; margin-bottom:20px; }
+    .exec-chart-panel { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; padding:18px; }
+    .exec-chart-title { font-size:12.5px; font-weight:600; color:var(--text-primary); margin-bottom:14px; }
+    .exec-hl-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .exec-hl { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; padding:16px 18px; }
+    .exec-hl-label { font-size:10.5px; font-weight:500; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+    .exec-hl-val  { font-size:26px; font-weight:600; font-family:'DM Mono',monospace; color:var(--text-primary); letter-spacing:-.5px; line-height:1.1; }
+    .exec-hl-name { font-size:12px; color:var(--text-secondary); margin-top:4px; }
+    .exec-hl-meta { font-size:11px; font-weight:500; margin-top:3px; }
+    .exec-hl-meta.red { color:var(--red); } .exec-hl-meta.amber { color:var(--amber); } .exec-hl-meta.green { color:var(--green); } .exec-hl-meta.muted { color:var(--text-tertiary); }
+    .dl-row { display:flex; align-items:center; gap:7px; padding:3.5px 0; }
+    .dl-dot { width:8px; height:8px; border-radius:2px; flex-shrink:0; }
+    .dl-label { font-size:11.5px; color:var(--text-secondary); flex:1; }
+    .dl-count { font-family:'DM Mono',monospace; font-size:11px; color:var(--text-tertiary); }
+    .dl-amount { font-family:'DM Mono',monospace; font-size:11px; color:var(--text-primary); font-weight:500; }
 
-    .pres-table-wrap { overflow-x:auto; }
-    .pres-table { width:100%; border-collapse:collapse; font-size:12.5px; }
-    .pres-table thead th {
-      padding:8px 12px; text-align:left; font-size:10.5px; font-weight:500;
-      color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.05em;
-      border-bottom:1px solid var(--border); background:var(--bg-elevated); white-space:nowrap;
-    }
-    .pres-table tbody tr { border-bottom:1px solid var(--border); transition:background .1s; cursor:default; }
-    .pres-table tbody tr:last-child { border-bottom:none; }
-    .pres-table tbody tr:hover td { background:var(--bg-elevated); }
-    .pres-table tbody td { padding:9px 12px; color:var(--text-primary); vertical-align:middle; }
-    .col-cliente { font-weight:500; white-space:nowrap; }
-    .col-desc { color:var(--text-secondary); max-width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .col-num  { font-family:'DM Mono',monospace; font-weight:500; white-space:nowrap; }
-    .col-mono { font-family:'DM Mono',monospace; color:var(--text-secondary); white-space:nowrap; }
-    .col-center { text-align:center; font-family:'DM Mono',monospace; color:var(--text-tertiary); }
-    .resp-chip { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; background:var(--text-primary); color:#fff; font-size:9.5px; font-weight:600; }
-    .status-pill { display:inline-flex; align-items:center; font-size:11px; font-weight:500; padding:3px 8px; border-radius:10px; white-space:nowrap; }
-    .pill-borrador   { background:var(--bg-elevated); color:var(--text-tertiary); border:1px solid var(--border); }
-    .pill-enviado    { background:var(--blue-bg);   color:var(--blue);   border:1px solid var(--blue-border);   }
-    .pill-negociando { background:var(--amber-bg);  color:var(--amber);  border:1px solid var(--amber-border);  }
-    .pill-aceptado   { background:var(--green-bg);  color:var(--green);  border:1px solid var(--green-border);  }
-    .pill-rechazado  { background:var(--red-bg);    color:var(--red);    border:1px solid var(--red-border);    }
-    .table-footer { display:flex; align-items:center; gap:20px; padding:10px 16px; background:var(--bg-elevated); border-top:1px solid var(--border); font-size:12px; color:var(--text-secondary); }
-    .table-footer strong { color:var(--text-primary); font-family:'DM Mono',monospace; }
+    /* ─── IA STATUS MODULE ───────────────────────────── */
+    .ia-btn { display:flex; align-items:center; gap:6px; padding:5px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg-surface); font-size:12px; color:var(--text-secondary); cursor:pointer; transition:all .12s; user-select:none; }
+    .ia-btn:hover { background:var(--bg-elevated); }
+    .ia-btn-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .ia-btn-dot-green { background:var(--green); } .ia-btn-dot-amber { background:var(--amber); } .ia-btn-dot-red { background:var(--red); }
+    @keyframes iapulse { 0%,100%{opacity:.7} 50%{opacity:1} }
+    .ia-btn-dot { animation:iapulse 2.5s infinite; }
+    #ia-panel { position:fixed; top:53px; right:96px; z-index:900; width:348px; background:var(--bg-surface); border:1px solid var(--border); border-radius:10px; box-shadow:0 8px 28px rgba(0,0,0,.12); overflow:hidden; display:none; }
+    #ia-panel.open { display:block; animation:iaDrop .15s ease; }
+    @keyframes iaDrop { from{opacity:0;transform:translateY(-6px)} to{opacity:1;transform:translateY(0)} }
+    .ia-panel-hdr { padding:12px 16px; background:var(--bg-elevated); border-bottom:1px solid var(--border); }
+    .ia-panel-tag { font-size:10.5px; font-weight:500; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.06em; }
+    .ia-panel-status { font-size:14px; font-weight:600; color:var(--text-primary); margin-top:2px; }
+    .ia-row { display:flex; align-items:flex-start; gap:10px; padding:8px 16px; transition:background .1s; cursor:default; }
+    .ia-row:hover { background:var(--bg-elevated); }
+    .ia-row-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; margin-top:4px; }
+    .ia-row-dot-green { background:var(--green); } .ia-row-dot-amber { background:var(--amber); } .ia-row-dot-red { background:var(--red); }
+    .ia-row-name { font-size:12px; font-weight:500; color:var(--text-primary); }
+    .ia-row-text { font-size:11px; color:var(--text-secondary); line-height:1.45; margin-top:1px; }
+    .ia-panel-footer { padding:9px 16px; border-top:1px solid var(--border); text-align:center; font-size:11px; color:var(--text-tertiary); }
 
     /* ─── PROYECTOS KANBAN ───────────────────────────── */
     .kanban-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px; }
@@ -948,6 +946,11 @@
         <span id="topbar-title">Resumen Ejecutivo</span>
       </div>
       <div class="topbar-right">
+        <div class="ia-btn" id="ia-btn" onclick="toggleIAPanel()">
+          <span class="ia-btn-dot ia-btn-dot-amber" id="ia-btn-dot"></span>
+          <span id="ia-btn-label">2 alertas activas</span>
+        </div>
+
         <span class="topbar-meta">Actualizado hace 2 min</span>
 
         <div class="topbar-alert" onclick="navigate(document.querySelector('[data-section=alertas]'))" title="Alertas">
@@ -1233,40 +1236,69 @@
       <!-- SECCIÓN 3: Presupuestos -->
       <section id="section-presupuestos" class="section">
 
-        <div class="section-topbar">
-          <div class="filter-tabs" id="pres-filters">
-            <div class="filter-tab active" data-filter="all"        onclick="filterPres(this)">Todos       <span class="ftab-count">15</span></div>
-            <div class="filter-tab"        data-filter="borrador"   onclick="filterPres(this)">Borrador    <span class="ftab-count">2</span></div>
-            <div class="filter-tab"        data-filter="enviado"    onclick="filterPres(this)">Enviado     <span class="ftab-count">4</span></div>
-            <div class="filter-tab"        data-filter="negociando" onclick="filterPres(this)">Negociando  <span class="ftab-count">3</span></div>
-            <div class="filter-tab"        data-filter="aceptado"   onclick="filterPres(this)">Aceptado    <span class="ftab-count">4</span></div>
-            <div class="filter-tab"        data-filter="rechazado"  onclick="filterPres(this)">Rechazado   <span class="ftab-count">2</span></div>
+        <!-- KPI Row -->
+        <div class="exec-kpi-grid">
+          <div class="exec-kpi">
+            <div class="exec-kpi-label">Pipeline activo</div>
+            <div class="exec-kpi-val">28.760€</div>
+            <div class="exec-kpi-sub">7 presupuestos en juego</div>
+            <div class="exec-kpi-delta green">Enviado + en negociación</div>
           </div>
-          <div class="search-wrap">
-            <div class="search-box">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <input type="text" placeholder="Buscar cliente o descripción…" oninput="searchPres(this.value)">
-            </div>
-            <button class="btn-primary">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              Nuevo presupuesto
-            </button>
+          <div class="exec-kpi">
+            <div class="exec-kpi-label">Ganado (período)</div>
+            <div class="exec-kpi-val">8.360€</div>
+            <div class="exec-kpi-sub">4 presupuestos cerrados</div>
+            <div class="exec-kpi-delta green">↑ Conversión 67% (4 de 6)</div>
+          </div>
+          <div class="exec-kpi">
+            <div class="exec-kpi-label">En negociación</div>
+            <div class="exec-kpi-val">17.600€</div>
+            <div class="exec-kpi-sub">3 presupuestos activos</div>
+            <div class="exec-kpi-delta amber">Mayor oport.: Altafit 8.200€</div>
+          </div>
+          <div class="exec-kpi">
+            <div class="exec-kpi-label">Ticket medio ganado</div>
+            <div class="exec-kpi-val">2.090€</div>
+            <div class="exec-kpi-sub">Últimos 4 cierres</div>
+            <div class="exec-kpi-delta muted">Velocidad media: 12 días</div>
           </div>
         </div>
 
-        <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:9px;overflow:hidden;">
-          <div class="pres-table-wrap">
-            <table class="pres-table">
-              <thead>
-                <tr>
-                  <th>Cliente</th><th>Descripción</th><th>Importe</th>
-                  <th>Fecha envío</th><th>Estado</th><th style="text-align:center;">Días</th><th>Resp.</th>
-                </tr>
-              </thead>
-              <tbody id="pres-tbody"></tbody>
-            </table>
+        <!-- Charts row -->
+        <div class="exec-charts-row">
+          <div class="exec-chart-panel">
+            <div class="exec-chart-title">Importe por etapa del pipeline</div>
+            <canvas id="chart-pres-bar" height="158"></canvas>
           </div>
-          <div class="table-footer" id="pres-footer"></div>
+          <div class="exec-chart-panel">
+            <div class="exec-chart-title">Distribución por estado</div>
+            <div style="display:flex;align-items:center;gap:18px;margin-top:6px;">
+              <canvas id="chart-pres-donut" width="118" height="118" style="flex-shrink:0;"></canvas>
+              <div id="pres-legend" class="donut-legend" style="flex:1;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Executive highlights -->
+        <div class="exec-hl-grid">
+          <div class="exec-hl">
+            <div class="exec-hl-label">Mayor oportunidad activa</div>
+            <div class="exec-hl-val">8.200€</div>
+            <div class="exec-hl-name">App móvil iOS/Android · Altafit</div>
+            <div class="exec-hl-meta red">8 días en negociación · vence el miércoles</div>
+          </div>
+          <div class="exec-hl">
+            <div class="exec-hl-label">Sin respuesta +10 días</div>
+            <div class="exec-hl-val" style="color:var(--amber);">3</div>
+            <div class="exec-hl-name">Bellvitge · Mares · Despacho Ferrer</div>
+            <div class="exec-hl-meta amber">Total en riesgo: 11.560€</div>
+          </div>
+          <div class="exec-hl">
+            <div class="exec-hl-label">Proyección si cierran top 2</div>
+            <div class="exec-hl-val" style="color:var(--green);">+13.800€</div>
+            <div class="exec-hl-name">Altafit (8.200€) + Bellvitge (5.600€)</div>
+            <div class="exec-hl-meta green">Superaría el récord mensual histórico</div>
+          </div>
         </div>
 
       </section>
@@ -1516,6 +1548,8 @@
 </div><!-- /app -->
 
 <!-- ═══ FRIDAY REPORT MODAL ═══ -->
+<div id="ia-panel"></div>
+
 <div id="modal-friday" style="display:none;" class="modal-backdrop" onclick="if(event.target===this)closeFridayReport()">
   <div class="modal-box">
     <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:20px;">
@@ -1594,6 +1628,7 @@
     if (target) target.classList.add('active');
 
     document.getElementById('topbar-title').textContent = SECTION_TITLES[key] || key;
+    if (key === 'presupuestos') setTimeout(initPresCharts, 80);
   }
 
   function openFridayReport() {
@@ -1626,44 +1661,91 @@
     {cliente:'Simyo',            desc:'Mantenimiento web anual',       imp:1200, fecha:'—',     estado:'borrador',   resp:'ED',dias:0 },
     {cliente:'Clínica Bellvitge',desc:'SEO médico — renovación',       imp:960,  fecha:'20 feb',estado:'rechazado',  resp:'JR',dias:31},
   ];
-  const PILL = {
-    borrador:   ['pill-borrador',  'Borrador'  ],
-    enviado:    ['pill-enviado',   'Enviado'   ],
-    negociando: ['pill-negociando','Negociando'],
-    aceptado:   ['pill-aceptado',  'Aceptado'  ],
-    rechazado:  ['pill-rechazado', 'Rechazado' ],
-  };
-  let _pF = 'all', _pS = '';
+  // Presupuestos executive charts
+  let _presBarChart = null, _presDonutChart = null;
+  function initPresCharts() {
+    if (_presBarChart)  { _presBarChart.destroy();  _presBarChart  = null; }
+    if (_presDonutChart){ _presDonutChart.destroy(); _presDonutChart= null; }
+    const barCtx   = document.getElementById('chart-pres-bar');
+    const donutCtx = document.getElementById('chart-pres-donut');
+    if (!barCtx || !donutCtx) return;
+    const colors  = ['#9b9b8f','#2563eb','#d97706','#16a34a','#dc2626'];
+    const labels  = ['Borrador','Enviado','Negociando','Aceptado','Rechazado'];
+    const counts  = [2, 4, 3, 4, 2];
+    const amounts = [2000, 11160, 17600, 8360, 3160];
+    _presBarChart = new Chart(barCtx, {
+      type:'bar',
+      data:{ labels, datasets:[{ data:amounts, backgroundColor:colors, borderRadius:4, borderSkipped:false }] },
+      options:{
+        indexAxis:'y', responsive:true,
+        plugins:{ legend:{display:false}, tooltip:{callbacks:{label:ctx=>'  '+Number(ctx.raw).toLocaleString('es-ES')+'€'}} },
+        scales:{
+          x:{ grid:{color:'#e4e3de'}, border:{color:'#e4e3de'}, ticks:{color:'#9b9b8f',font:{family:'DM Mono,monospace',size:11}, callback:v=>v===0?'':(v>=1000?Math.round(v/1000)+'k':v)+'€'} },
+          y:{ grid:{display:false}, border:{display:false}, ticks:{color:'#6b6a63',font:{family:'DM Sans,sans-serif',size:12}} }
+        }
+      }
+    });
+    _presDonutChart = new Chart(donutCtx, {
+      type:'doughnut',
+      data:{ labels, datasets:[{ data:counts, backgroundColor:colors, borderWidth:3, borderColor:'#ffffff' }] },
+      options:{ responsive:false, cutout:'68%', plugins:{ legend:{display:false}, tooltip:{callbacks:{label:ctx=>` ${ctx.label}: ${ctx.raw}`}} } }
+    });
+    const legendEl = document.getElementById('pres-legend');
+    if (legendEl) legendEl.innerHTML = labels.map((l,i)=>
+      `<div class="dl-row"><div class="dl-dot" style="background:${colors[i]};"></div><div class="dl-label">${l}</div><div class="dl-count">${counts[i]}&nbsp;</div><div class="dl-amount">${amounts[i].toLocaleString('es-ES')}€</div></div>`
+    ).join('');
+  }
 
-  function renderPresTable() {
-    const tbody = document.getElementById('pres-tbody');
-    const footer = document.getElementById('pres-footer');
-    if (!tbody) return;
-    const rows = PRESUPUESTOS.filter(p =>
-      (_pF === 'all' || p.estado === _pF) &&
-      (!_pS || p.cliente.toLowerCase().includes(_pS) || p.desc.toLowerCase().includes(_pS))
-    );
-    tbody.innerHTML = rows.map(p => {
-      const diasStr = p.dias > 0 ? p.dias + 'd' : (p.fecha === '—' ? '—' : '0d');
-      const diasStyle = (p.dias > 14 && p.estado !== 'aceptado' && p.estado !== 'rechazado' && p.estado !== 'borrador') ? 'color:var(--red);font-weight:500;' : '';
-      return `<tr><td class="col-cliente">${p.cliente}</td><td class="col-desc">${p.desc}</td>
-        <td class="col-num">${p.imp.toLocaleString('es-ES')}€</td>
-        <td class="col-mono">${p.fecha}</td>
-        <td><span class="status-pill ${PILL[p.estado][0]}">${PILL[p.estado][1]}</span></td>
-        <td class="col-center" style="${diasStyle}">${diasStr}</td>
-        <td><span class="resp-chip">${p.resp}</span></td></tr>`;
-    }).join('') || '<tr><td colspan="7" style="text-align:center;padding:28px;color:var(--text-tertiary);">Sin resultados</td></tr>';
-    const total = rows.reduce((s, p) => s + p.imp, 0);
-    if (footer) footer.innerHTML = `<span>${rows.length} presupuesto${rows.length !== 1 ? 's' : ''}</span><span>Total visible: <strong>${total.toLocaleString('es-ES')}€</strong></span>`;
+  // IA Status module
+  const IA_MODULES = [
+    {name:'Resumen',      level:'amber', text:'Score empresa en descenso (74/100). Tendencia bajista — revisar objetivos Q2.'},
+    {name:'Visor 360°',   level:'red',   text:'3 clientes en riesgo crítico: Altafit, Constructora Arco y Clínica Bellvitge.'},
+    {name:'Presupuestos', level:'amber', text:'28.760€ en pipeline activo. 3 presupuestos llevan +10 días sin respuesta.'},
+    {name:'Proyectos',    level:'amber', text:'Portal Bellvitge bloqueado al 45%. Web Simyo vence mañana — prioridad alta.'},
+    {name:'Equipo',       level:'amber', text:'Carga alta en Eduardo (3 proyectos en paralelo). Redistribuir antes del martes.'},
+    {name:'Finanzas',     level:'green', text:'MRR 12.400€, récord histórico. Flujo de caja positivo este trimestre.'},
+    {name:'Objetivos',    level:'green', text:'OKRs Q1 al 78% de cumplimiento. En línea con el plan anual.'},
+    {name:'Alertas',      level:'red',   text:'3 alertas activas requieren decisión directiva inmediata.'},
+  ];
+  function toggleIAPanel() {
+    const panel = document.getElementById('ia-panel');
+    panel.classList.toggle('open');
+    if (panel.classList.contains('open'))
+      setTimeout(()=>document.addEventListener('click', _closeIA), 0);
   }
-  function filterPres(el) {
-    document.querySelectorAll('#pres-filters .filter-tab').forEach(t => t.classList.remove('active'));
-    el.classList.add('active');
-    _pF = el.dataset.filter;
-    renderPresTable();
+  function _closeIA(e) {
+    if (!e.target.closest('#ia-panel') && !e.target.closest('#ia-btn')) {
+      document.getElementById('ia-panel').classList.remove('open');
+      document.removeEventListener('click', _closeIA);
+    }
   }
-  function searchPres(val) { _pS = val.toLowerCase(); renderPresTable(); }
-  renderPresTable();
+  (function buildIAPanel() {
+    const reds   = IA_MODULES.filter(m=>m.level==='red').length;
+    const ambers = IA_MODULES.filter(m=>m.level==='amber').length;
+    const lvl    = reds > 0 ? 'red' : ambers > 0 ? 'amber' : 'green';
+    const lbl    = reds > 0 ? `${reds} alerta${reds>1?'s':''} crítica${reds>1?'s':''}` : ambers > 0 ? `${ambers} módulos en revisión` : 'Todo en orden';
+    const dot = document.getElementById('ia-btn-dot');
+    const btnLbl = document.getElementById('ia-btn-label');
+    if (dot) dot.className = `ia-btn-dot ia-btn-dot-${lvl}`;
+    if (btnLbl) btnLbl.textContent = lbl;
+    const panel = document.getElementById('ia-panel');
+    if (!panel) return;
+    const now = new Date();
+    const dias  = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+    const meses = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+    panel.innerHTML = `
+      <div class="ia-panel-hdr">
+        <div class="ia-panel-tag">Estado IA · ${dias[now.getDay()]} ${now.getDate()} ${meses[now.getMonth()]}</div>
+        <div class="ia-panel-status">${reds>0?'⚠ ':''}${lbl}</div>
+      </div>
+      <div>${IA_MODULES.map(m=>`
+        <div class="ia-row">
+          <div class="ia-row-dot ia-row-dot-${m.level}"></div>
+          <div><div class="ia-row-name">${m.name}</div><div class="ia-row-text">${m.text}</div></div>
+        </div>`).join('')}
+      </div>
+      <div class="ia-panel-footer">Actualizado hace 2 min · Zaguán IA v1</div>`;
+  })();
 
   // ═══ VISOR 360° ═══════════════════════════════════════
   const VISOR_CLIENTS = [
