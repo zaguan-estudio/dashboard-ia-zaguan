@@ -732,6 +732,79 @@
 
     .ai-panel-body   { padding: 16px; }
     .ai-insight-text { font-size: 12.5px; color: var(--text-secondary); line-height: 1.72; }
+
+    /* ─── PRESUPUESTOS ──────────────────────────────── */
+    .section-topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; gap:12px; flex-wrap:wrap; }
+    .filter-tabs    { display:flex; gap:4px; flex-wrap:wrap; }
+    .filter-tab {
+      display:inline-flex; align-items:center; gap:5px; padding:5px 10px; border-radius:6px;
+      border:1px solid var(--border); background:var(--bg-surface);
+      font-size:12px; color:var(--text-secondary); cursor:pointer; transition:all .12s; user-select:none;
+    }
+    .filter-tab:hover { background:var(--bg-elevated); color:var(--text-primary); }
+    .filter-tab.active { background:var(--text-primary); color:#fff; border-color:var(--text-primary); }
+    .filter-tab.active .ftab-count { background:rgba(255,255,255,.2); color:#fff; }
+    .ftab-count { font-size:10px; font-family:'DM Mono',monospace; background:var(--bg-elevated); color:var(--text-tertiary); padding:1px 5px; border-radius:8px; }
+    .search-wrap { display:flex; align-items:center; gap:8px; }
+    .search-box {
+      display:flex; align-items:center; gap:6px; border:1px solid var(--border); border-radius:6px;
+      background:var(--bg-surface); padding:5px 10px; transition:border-color .15s;
+    }
+    .search-box:focus-within { border-color:var(--border-strong); }
+    .search-box input { border:none; outline:none; background:transparent; font-size:12.5px; font-family:'DM Sans',sans-serif; color:var(--text-primary); width:170px; }
+    .search-box input::placeholder { color:var(--text-tertiary); }
+
+    .pres-table-wrap { overflow-x:auto; }
+    .pres-table { width:100%; border-collapse:collapse; font-size:12.5px; }
+    .pres-table thead th {
+      padding:8px 12px; text-align:left; font-size:10.5px; font-weight:500;
+      color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.05em;
+      border-bottom:1px solid var(--border); background:var(--bg-elevated); white-space:nowrap;
+    }
+    .pres-table tbody tr { border-bottom:1px solid var(--border); transition:background .1s; cursor:default; }
+    .pres-table tbody tr:last-child { border-bottom:none; }
+    .pres-table tbody tr:hover td { background:var(--bg-elevated); }
+    .pres-table tbody td { padding:9px 12px; color:var(--text-primary); vertical-align:middle; }
+    .col-cliente { font-weight:500; white-space:nowrap; }
+    .col-desc { color:var(--text-secondary); max-width:200px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .col-num  { font-family:'DM Mono',monospace; font-weight:500; white-space:nowrap; }
+    .col-mono { font-family:'DM Mono',monospace; color:var(--text-secondary); white-space:nowrap; }
+    .col-center { text-align:center; font-family:'DM Mono',monospace; color:var(--text-tertiary); }
+    .resp-chip { display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; border-radius:50%; background:var(--text-primary); color:#fff; font-size:9.5px; font-weight:600; }
+    .status-pill { display:inline-flex; align-items:center; font-size:11px; font-weight:500; padding:3px 8px; border-radius:10px; white-space:nowrap; }
+    .pill-borrador   { background:var(--bg-elevated); color:var(--text-tertiary); border:1px solid var(--border); }
+    .pill-enviado    { background:var(--blue-bg);   color:var(--blue);   border:1px solid var(--blue-border);   }
+    .pill-negociando { background:var(--amber-bg);  color:var(--amber);  border:1px solid var(--amber-border);  }
+    .pill-aceptado   { background:var(--green-bg);  color:var(--green);  border:1px solid var(--green-border);  }
+    .pill-rechazado  { background:var(--red-bg);    color:var(--red);    border:1px solid var(--red-border);    }
+    .table-footer { display:flex; align-items:center; gap:20px; padding:10px 16px; background:var(--bg-elevated); border-top:1px solid var(--border); font-size:12px; color:var(--text-secondary); }
+    .table-footer strong { color:var(--text-primary); font-family:'DM Mono',monospace; }
+
+    /* ─── PROYECTOS KANBAN ───────────────────────────── */
+    .kanban-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:20px; }
+    .k-stat { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; align-items:center; gap:10px; }
+    .k-stat-icon { width:30px; height:30px; border-radius:7px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .k-stat-val  { font-size:19px; font-weight:600; font-family:'DM Mono',monospace; color:var(--text-primary); line-height:1.1; }
+    .k-stat-lbl  { font-size:11px; color:var(--text-tertiary); margin-top:2px; }
+    .kanban-scroll { overflow-x:auto; padding-bottom:4px; }
+    .kanban-board  { display:grid; grid-template-columns:repeat(4,minmax(220px,1fr)); gap:10px; align-items:start; }
+    .k-col { background:var(--bg-elevated); border:1px solid var(--border); border-radius:9px; overflow:hidden; }
+    .k-col-hdr { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; border-bottom:1px solid var(--border); }
+    .k-col-title { font-size:12px; font-weight:600; color:var(--text-primary); display:flex; align-items:center; gap:7px; }
+    .k-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .k-col-cnt { font-size:10.5px; font-family:'DM Mono',monospace; color:var(--text-tertiary); }
+    .k-col-body { padding:8px; display:flex; flex-direction:column; gap:7px; }
+    .k-card { background:var(--bg-surface); border:1px solid var(--border); border-radius:7px; padding:11px 12px; cursor:default; transition:border-color .12s; }
+    .k-card:hover { border-color:var(--border-strong); }
+    .k-card-name   { font-size:12.5px; font-weight:500; color:var(--text-primary); line-height:1.3; margin-bottom:2px; }
+    .k-card-client { font-size:11px; color:var(--text-tertiary); margin-bottom:7px; }
+    .k-bar-wrap    { height:3px; background:var(--border); border-radius:2px; overflow:hidden; margin-bottom:3px; }
+    .k-bar         { height:3px; border-radius:2px; }
+    .k-pct         { font-size:10px; color:var(--text-tertiary); font-family:'DM Mono',monospace; }
+    .k-card-footer { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+    .k-card-val    { font-size:11.5px; font-family:'DM Mono',monospace; color:var(--text-secondary); }
+    .k-assign      { width:20px; height:20px; border-radius:50%; background:var(--text-primary); color:#fff; font-size:8.5px; font-weight:600; display:inline-flex; align-items:center; justify-content:center; }
+    .k-date        { font-size:10.5px; color:var(--text-tertiary); font-family:'DM Mono',monospace; }
   </style>
 </head>
 <body>
@@ -1159,26 +1232,233 @@
 
       <!-- SECCIÓN 3: Presupuestos -->
       <section id="section-presupuestos" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14 2 14 8 20 8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
-          </svg>
-          <p>Presupuestos</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <div class="section-topbar">
+          <div class="filter-tabs" id="pres-filters">
+            <div class="filter-tab active" data-filter="all"        onclick="filterPres(this)">Todos       <span class="ftab-count">15</span></div>
+            <div class="filter-tab"        data-filter="borrador"   onclick="filterPres(this)">Borrador    <span class="ftab-count">2</span></div>
+            <div class="filter-tab"        data-filter="enviado"    onclick="filterPres(this)">Enviado     <span class="ftab-count">4</span></div>
+            <div class="filter-tab"        data-filter="negociando" onclick="filterPres(this)">Negociando  <span class="ftab-count">3</span></div>
+            <div class="filter-tab"        data-filter="aceptado"   onclick="filterPres(this)">Aceptado    <span class="ftab-count">4</span></div>
+            <div class="filter-tab"        data-filter="rechazado"  onclick="filterPres(this)">Rechazado   <span class="ftab-count">2</span></div>
+          </div>
+          <div class="search-wrap">
+            <div class="search-box">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input type="text" placeholder="Buscar cliente o descripción…" oninput="searchPres(this.value)">
+            </div>
+            <button class="btn-primary">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Nuevo presupuesto
+            </button>
+          </div>
         </div>
+
+        <div style="background:var(--bg-surface);border:1px solid var(--border);border-radius:9px;overflow:hidden;">
+          <div class="pres-table-wrap">
+            <table class="pres-table">
+              <thead>
+                <tr>
+                  <th>Cliente</th><th>Descripción</th><th>Importe</th>
+                  <th>Fecha envío</th><th>Estado</th><th style="text-align:center;">Días</th><th>Resp.</th>
+                </tr>
+              </thead>
+              <tbody id="pres-tbody"></tbody>
+            </table>
+          </div>
+          <div class="table-footer" id="pres-footer"></div>
+        </div>
+
       </section>
 
       <!-- SECCIÓN 4: Proyectos -->
       <section id="section-proyectos" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-          </svg>
-          <p>Proyectos</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <!-- Stats bar -->
+        <div class="kanban-stats">
+          <div class="k-stat">
+            <div class="k-stat-icon" style="background:var(--blue-bg);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <div><div class="k-stat-val">12</div><div class="k-stat-lbl">Total proyectos</div></div>
+          </div>
+          <div class="k-stat">
+            <div class="k-stat-icon" style="background:var(--purple-bg);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div><div class="k-stat-val">7</div><div class="k-stat-lbl">Activos ahora</div></div>
+          </div>
+          <div class="k-stat">
+            <div class="k-stat-icon" style="background:var(--amber-bg);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div><div class="k-stat-val">36.600€</div><div class="k-stat-lbl">Valor en curso</div></div>
+          </div>
+          <div class="k-stat">
+            <div class="k-stat-icon" style="background:var(--green-bg);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div><div class="k-stat-val">3</div><div class="k-stat-lbl">Completados (mes)</div></div>
+          </div>
         </div>
+
+        <!-- Kanban -->
+        <div class="kanban-scroll">
+          <div class="kanban-board">
+
+            <!-- Planificación -->
+            <div class="k-col">
+              <div class="k-col-hdr">
+                <span class="k-col-title"><span class="k-dot" style="background:var(--text-tertiary);"></span>Planificación</span>
+                <span class="k-col-cnt">2</span>
+              </div>
+              <div class="k-col-body">
+                <div class="k-card">
+                  <div class="k-card-name">App móvil iOS / Android</div>
+                  <div class="k-card-client">Altafit</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">8.200€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">abr 30</span><span class="k-assign">ED</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Catálogo digital B2B</div>
+                  <div class="k-card-client">Distribuidora Mares</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">3.800€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">abr 15</span><span class="k-assign">ED</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- En curso -->
+            <div class="k-col">
+              <div class="k-col-hdr">
+                <span class="k-col-title"><span class="k-dot" style="background:var(--blue);"></span>En curso</span>
+                <span class="k-col-cnt">5</span>
+              </div>
+              <div class="k-col-body">
+                <div class="k-card">
+                  <div class="k-card-name">Web corporativa</div>
+                  <div class="k-card-client">Simyo</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:85%;background:var(--blue);"></div></div>
+                  <div class="k-pct">85% completado</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">7.400€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date" style="color:var(--red);">24 mar</span><span class="k-assign">ED</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Web + motor de reservas</div>
+                  <div class="k-card-client">Hotel Neptuno</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:90%;background:var(--blue);"></div></div>
+                  <div class="k-pct">90% completado</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">2.800€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">27 mar</span><span class="k-assign">JR</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Portal de pacientes</div>
+                  <div class="k-card-client">Clínica Bellvitge</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:45%;background:var(--amber);"></div></div>
+                  <div class="k-pct" style="color:var(--amber);">45% · en riesgo</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">5.600€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">15 abr</span><span class="k-assign">JR</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Tienda online</div>
+                  <div class="k-card-client">Farmacia Lorente</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:70%;background:var(--blue);"></div></div>
+                  <div class="k-pct">70% completado</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">3.200€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">5 abr</span><span class="k-assign">MG</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Identidad visual</div>
+                  <div class="k-card-client">La Masia</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:50%;background:var(--blue);"></div></div>
+                  <div class="k-pct">50% completado</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">1.600€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">10 abr</span><span class="k-assign">JR</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- En revisión -->
+            <div class="k-col">
+              <div class="k-col-hdr">
+                <span class="k-col-title"><span class="k-dot" style="background:var(--amber);"></span>En revisión</span>
+                <span class="k-col-cnt">2</span>
+              </div>
+              <div class="k-col-body">
+                <div class="k-card">
+                  <div class="k-card-name">Growth hacking Q2</div>
+                  <div class="k-card-client">Tech Nexo</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:95%;background:var(--green);"></div></div>
+                  <div class="k-pct" style="color:var(--green);">95% · revisión final</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">1.600€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">25 mar</span><span class="k-assign">MG</span></div>
+                  </div>
+                </div>
+                <div class="k-card">
+                  <div class="k-card-name">Campaña Google Ads</div>
+                  <div class="k-card-client">Grupo Vértice</div>
+                  <div class="k-bar-wrap"><div class="k-bar" style="width:80%;background:var(--green);"></div></div>
+                  <div class="k-pct" style="color:var(--green);">80% · en revisión</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">2.400€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">31 mar</span><span class="k-assign">MG</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Completado -->
+            <div class="k-col">
+              <div class="k-col-hdr">
+                <span class="k-col-title"><span class="k-dot" style="background:var(--green);"></span>Completado</span>
+                <span class="k-col-cnt">3</span>
+              </div>
+              <div class="k-col-body">
+                <div class="k-card" style="opacity:.75;">
+                  <div class="k-card-name">Rediseño web</div>
+                  <div class="k-card-client">Inmob. Torres</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">3.200€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">feb 2026</span><span class="k-assign">JR</span></div>
+                  </div>
+                </div>
+                <div class="k-card" style="opacity:.75;">
+                  <div class="k-card-name">Branding corporativo</div>
+                  <div class="k-card-client">Biplaza</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">2.400€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">ene 2026</span><span class="k-assign">JR</span></div>
+                  </div>
+                </div>
+                <div class="k-card" style="opacity:.75;">
+                  <div class="k-card-name">Landing captación</div>
+                  <div class="k-card-client">Academia Idiomas</div>
+                  <div class="k-card-footer">
+                    <div class="k-card-val">1.400€</div>
+                    <div style="display:flex;align-items:center;gap:6px;"><span class="k-date">mar 2026</span><span class="k-assign">MG</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </section>
 
       <!-- SECCIÓN 5: Equipo -->
@@ -1327,6 +1607,63 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeFridayReport();
   });
+
+  // ═══ PRESUPUESTOS ══════════════════════════════════════
+  const PRESUPUESTOS = [
+    {cliente:'Biplaza',          desc:'Web corporativa + CMS',        imp:4800, fecha:'20 mar',estado:'enviado',    resp:'JR',dias:3 },
+    {cliente:'Altafit',          desc:'App móvil iOS / Android',       imp:8200, fecha:'15 mar',estado:'negociando', resp:'ED',dias:8 },
+    {cliente:'La Masia',         desc:'Identidad visual completa',     imp:1600, fecha:'21 mar',estado:'aceptado',   resp:'JR',dias:2 },
+    {cliente:'Clínica Bellvitge',desc:'Portal de pacientes web',       imp:5600, fecha:'10 mar',estado:'negociando', resp:'JR',dias:13},
+    {cliente:'Tech Nexo',        desc:'Growth hacking Q2 2026',        imp:1600, fecha:'18 mar',estado:'aceptado',   resp:'MG',dias:5 },
+    {cliente:'Hotel Neptuno',    desc:'Campaña digital verano 2026',   imp:2400, fecha:'22 mar',estado:'enviado',    resp:'JR',dias:1 },
+    {cliente:'Distrib. Mares',   desc:'Catálogo digital B2B',          imp:3800, fecha:'12 mar',estado:'negociando', resp:'ED',dias:11},
+    {cliente:'Academia Idiomas', desc:'Campañas Meta Q2 2026',         imp:960,  fecha:'01 mar',estado:'aceptado',   resp:'MG',dias:22},
+    {cliente:'Farmacia Lorente', desc:'Fotografía catálogo producto',  imp:800,  fecha:'—',     estado:'borrador',   resp:'JR',dias:0 },
+    {cliente:'Grupo Vértice',    desc:'Estrategia SEO anual 2026',     imp:4200, fecha:'05 mar',estado:'aceptado',   resp:'JR',dias:18},
+    {cliente:'Despacho Ferrer',  desc:'Renovación contrato SEO',       imp:2160, fecha:'08 mar',estado:'enviado',    resp:'JR',dias:15},
+    {cliente:'Inmob. Torres',    desc:'Campaña Google verano',         imp:1800, fecha:'23 mar',estado:'enviado',    resp:'MG',dias:0 },
+    {cliente:'Constructora Arco',desc:'Web corporativa',               imp:2200, fecha:'28 feb',estado:'rechazado',  resp:'JR',dias:23},
+    {cliente:'Simyo',            desc:'Mantenimiento web anual',       imp:1200, fecha:'—',     estado:'borrador',   resp:'ED',dias:0 },
+    {cliente:'Clínica Bellvitge',desc:'SEO médico — renovación',       imp:960,  fecha:'20 feb',estado:'rechazado',  resp:'JR',dias:31},
+  ];
+  const PILL = {
+    borrador:   ['pill-borrador',  'Borrador'  ],
+    enviado:    ['pill-enviado',   'Enviado'   ],
+    negociando: ['pill-negociando','Negociando'],
+    aceptado:   ['pill-aceptado',  'Aceptado'  ],
+    rechazado:  ['pill-rechazado', 'Rechazado' ],
+  };
+  let _pF = 'all', _pS = '';
+
+  function renderPresTable() {
+    const tbody = document.getElementById('pres-tbody');
+    const footer = document.getElementById('pres-footer');
+    if (!tbody) return;
+    const rows = PRESUPUESTOS.filter(p =>
+      (_pF === 'all' || p.estado === _pF) &&
+      (!_pS || p.cliente.toLowerCase().includes(_pS) || p.desc.toLowerCase().includes(_pS))
+    );
+    tbody.innerHTML = rows.map(p => {
+      const diasStr = p.dias > 0 ? p.dias + 'd' : (p.fecha === '—' ? '—' : '0d');
+      const diasStyle = (p.dias > 14 && p.estado !== 'aceptado' && p.estado !== 'rechazado' && p.estado !== 'borrador') ? 'color:var(--red);font-weight:500;' : '';
+      return `<tr><td class="col-cliente">${p.cliente}</td><td class="col-desc">${p.desc}</td>
+        <td class="col-num">${p.imp.toLocaleString('es-ES')}€</td>
+        <td class="col-mono">${p.fecha}</td>
+        <td><span class="status-pill ${PILL[p.estado][0]}">${PILL[p.estado][1]}</span></td>
+        <td class="col-center" style="${diasStyle}">${diasStr}</td>
+        <td><span class="resp-chip">${p.resp}</span></td></tr>`;
+    }).join('') || '<tr><td colspan="7" style="text-align:center;padding:28px;color:var(--text-tertiary);">Sin resultados</td></tr>';
+    const total = rows.reduce((s, p) => s + p.imp, 0);
+    if (footer) footer.innerHTML = `<span>${rows.length} presupuesto${rows.length !== 1 ? 's' : ''}</span><span>Total visible: <strong>${total.toLocaleString('es-ES')}€</strong></span>`;
+  }
+  function filterPres(el) {
+    document.querySelectorAll('#pres-filters .filter-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    _pF = el.dataset.filter;
+    renderPresTable();
+  }
+  function searchPres(val) { _pS = val.toLowerCase(); renderPresTable(); }
+  renderPresTable();
 
   // ═══ VISOR 360° ═══════════════════════════════════════
   const VISOR_CLIENTS = [
