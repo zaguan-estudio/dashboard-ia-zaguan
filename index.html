@@ -654,6 +654,84 @@
     .tag-urgent  { background: var(--red-bg);    color: var(--red);    border: 1px solid var(--red-border);    }
     .tag-meeting { background: var(--blue-bg);   color: var(--blue);   border: 1px solid var(--blue-border);   }
     .tag-delivery{ background: var(--amber-bg);  color: var(--amber);  border: 1px solid var(--amber-border);  }
+
+    /* ─── VISOR 360° ─────────────────────────────────── */
+    .visor-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+    .client-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 11px; border-radius: 20px;
+      border: 1px solid var(--border); background: var(--bg-surface);
+      font-size: 12px; color: var(--text-secondary);
+      cursor: pointer; transition: all 0.12s; white-space: nowrap; user-select: none;
+    }
+    .client-chip:hover { background: var(--bg-elevated); color: var(--text-primary); }
+    .client-chip.active { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+    .client-chip.active .chip-dot { background: rgba(255,255,255,0.6); }
+    .chip-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+    .chip-dot-green { background: var(--green); }
+    .chip-dot-amber { background: var(--amber); }
+    .chip-dot-red   { background: var(--red);   }
+
+    .visor-grid {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      grid-template-rows: auto auto;
+      gap: 12px;
+    }
+    .visor-panel { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 9px; overflow: hidden; }
+    .visor-panel-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 16px; border-bottom: 1px solid var(--border);
+    }
+    .visor-panel-title { font-size: 12.5px; font-weight: 600; color: var(--text-primary); }
+    .visor-panel-body  { padding: 16px; }
+
+    .client-header {
+      display: flex; align-items: center; gap: 12px;
+      padding-bottom: 14px; margin-bottom: 14px; border-bottom: 1px solid var(--border);
+    }
+    .client-avatar-lg {
+      width: 42px; height: 42px; border-radius: 9px;
+      background: var(--text-primary); color: #fff;
+      font-size: 13px; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .client-name-lg { font-size: 14.5px; font-weight: 600; color: var(--text-primary); letter-spacing: -0.2px; line-height: 1.2; }
+    .client-sector  { font-size: 11px; color: var(--text-tertiary); margin-top: 2px; }
+    .client-status-badge { margin-left: auto; font-size: 10.5px; font-weight: 500; padding: 3px 8px; border-radius: 10px; }
+    .status-green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .status-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+    .status-red   { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border);   }
+
+    .client-meta-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .client-meta-label { font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; margin-bottom: 3px; }
+    .client-meta-value { font-size: 13px; font-weight: 500; color: var(--text-primary); font-family: 'DM Mono', monospace; }
+    .client-meta-sub   { font-size: 10.5px; color: var(--text-tertiary); margin-top: 1px; }
+
+    .score-gauge-wrap { display: flex; flex-direction: column; align-items: center; padding: 14px 0 8px; }
+    .score-gauge-svg  { width: 108px; height: 108px; }
+    .score-gauge-lbl  { font-size: 11px; color: var(--text-tertiary); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .score-breakdown  { padding: 4px 16px 16px; }
+    .score-br-row     { display: flex; align-items: center; gap: 8px; margin-bottom: 9px; }
+    .score-br-label   { font-size: 11px; color: var(--text-secondary); width: 108px; flex-shrink: 0; }
+    .score-br-bar-wrap{ flex: 1; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .score-br-bar     { height: 4px; border-radius: 2px; transition: width 0.45s ease; }
+    .score-br-val     { font-size: 10.5px; font-family: 'DM Mono', monospace; color: var(--text-tertiary); width: 28px; text-align: right; flex-shrink: 0; }
+
+    .proj-list {}
+    .proj-row  { display: flex; align-items: center; gap: 10px; padding: 8px 16px; transition: background 0.1s; }
+    .proj-row:hover { background: var(--bg-elevated); }
+    .proj-status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .proj-info { flex: 1; min-width: 0; }
+    .proj-name { font-size: 12.5px; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .proj-progress-wrap { display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+    .proj-bar-wrap { flex: 1; height: 3px; background: var(--border); border-radius: 2px; overflow: hidden; }
+    .proj-bar  { height: 3px; border-radius: 2px; }
+    .proj-pct  { font-size: 10px; font-family: 'DM Mono', monospace; color: var(--text-tertiary); width: 26px; flex-shrink: 0; }
+    .proj-value{ font-size: 11.5px; font-family: 'DM Mono', monospace; color: var(--text-secondary); white-space: nowrap; flex-shrink: 0; }
+
+    .ai-panel-body   { padding: 16px; }
+    .ai-insight-text { font-size: 12.5px; color: var(--text-secondary); line-height: 1.72; }
   </style>
 </head>
 <body>
@@ -1068,14 +1146,14 @@
 
       <!-- SECCIÓN 2: Visor 360° -->
       <section id="section-visor360" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-            <path d="M2 12h20"/>
-          </svg>
-          <p>Visor 360° del Cliente</p>
-          <span>Próxima fase de desarrollo</span>
+        <!-- Selector de clientes -->
+        <div class="visor-chips" id="visor-chips"></div>
+        <!-- Grid 4 paneles -->
+        <div class="visor-grid">
+          <div class="visor-panel" id="visor-panel-a"></div>
+          <div class="visor-panel" id="visor-panel-b"></div>
+          <div class="visor-panel" id="visor-panel-c"></div>
+          <div class="visor-panel" id="visor-panel-d"></div>
         </div>
       </section>
 
@@ -1249,6 +1327,199 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeFridayReport();
   });
+
+  // ═══ VISOR 360° ═══════════════════════════════════════
+  const VISOR_CLIENTS = [
+    { id:'biplaza',   name:'Biplaza',           initials:'BP', sector:'Inmobiliaria',  since:'Mar 2023', mrr:'1.200€', contact:'Laura Puig',      email:'laura@biplaza.es',     lastContact:'Hoy',      score:82, status:'green',
+      projects:[{name:'Web corporativa',status:'active',value:'4.800€',progress:35},{name:'SEO local',status:'done',value:'1.200€',progress:100},{name:'Google Ads',status:'done',value:'900€',progress:100},{name:'Branding',status:'done',value:'2.400€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:28,m:30},{l:'Comunicación',v:22,m:25},{l:'Proyectos en plazo',v:20,m:25},{l:'Satisfacción NPS',v:12,m:20}],
+      ai:'Cliente estratégico con relación sólida. Tiene un presupuesto de 4.800€ pendiente de aprobación — se recomienda hacer seguimiento esta semana. 4 proyectos completados con alta satisfacción. Potencial de upsell en servicios de contenido.' },
+
+    { id:'torres',    name:'Inmob. Torres',      initials:'IT', sector:'Inmobiliaria',  since:'Ene 2022', mrr:'850€',   contact:'Miquel Torres',   email:'m.torres@torres.es',   lastContact:'Ayer',     score:91, status:'green',
+      projects:[{name:'SEO trimestral',status:'active',value:'2.400€',progress:80},{name:'Rediseño web',status:'done',value:'3.200€',progress:100},{name:'Email marketing',status:'done',value:'600€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:30,m:30},{l:'Comunicación',v:24,m:25},{l:'Proyectos en plazo',v:23,m:25},{l:'Satisfacción NPS',v:14,m:20}],
+      ai:'Uno de los mejores clientes en cartera. Pagos siempre puntuales y comunicación fluida. El SEO trimestral está en su fase final con resultados notables (+40% tráfico orgánico). Momento ideal para proponer renovación anual.' },
+
+    { id:'altafit',   name:'Altafit',            initials:'AF', sector:'Fitness',       since:'Jun 2023', mrr:'600€',   contact:'Sandra Valls',    email:'svalls@altafit.com',   lastContact:'5 días',   score:54, status:'amber',
+      projects:[{name:'App móvil',status:'risk',value:'8.200€',progress:20},{name:'Web landing',status:'done',value:'1.800€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:18,m:30},{l:'Comunicación',v:12,m:25},{l:'Proyectos en plazo',v:14,m:25},{l:'Satisfacción NPS',v:10,m:20}],
+      ai:'Cliente en zona de riesgo. Sin respuesta en 5 días y el presupuesto de app móvil vence el miércoles. La comunicación se ha deteriorado. Acción urgente: llamada directa hoy para desbloquear la decisión antes del vencimiento.' },
+
+    { id:'lamasia',   name:'La Masia',           initials:'LM', sector:'Restauración',  since:'Mar 2026', mrr:'350€',   contact:'Carles Font',     email:'carles@lamasia.es',    lastContact:'Hoy',      score:68, status:'green',
+      projects:[{name:'Identidad visual',status:'active',value:'1.600€',progress:50}],
+      breakdown:[{l:'Pagos al día',v:24,m:30},{l:'Comunicación',v:20,m:25},{l:'Proyectos en plazo',v:16,m:25},{l:'Satisfacción NPS',v:8,m:20}],
+      ai:'Cliente nuevo con buen inicio de relación. Proyecto de identidad visual al 50%. Score provisional por poco historial — potencial alto si el primer entregable cumple expectativas. Mantener comunicación activa esta semana.' },
+
+    { id:'simyo',     name:'Simyo',              initials:'SM', sector:'Telecom',       since:'Sep 2024', mrr:'2.100€', contact:'Irene Campos',    email:'icampos@simyo.es',     lastContact:'Ayer',     score:76, status:'green',
+      projects:[{name:'Web corporativa',status:'active',value:'7.400€',progress:85},{name:'Campaña display',status:'done',value:'1.200€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:26,m:30},{l:'Comunicación',v:21,m:25},{l:'Proyectos en plazo',v:18,m:25},{l:'Satisfacción NPS',v:11,m:20}],
+      ai:'Proyecto web en recta final (85%). Entrega prevista mañana. Es el proyecto de mayor valor en curso — asegurar los últimos detalles antes de la entrega para garantizar el pago final y fidelizar al cliente a largo plazo.' },
+
+    { id:'vertice',   name:'Grupo Vértice',      initials:'GV', sector:'Construcción',  since:'Nov 2021', mrr:'1.800€', contact:'Pau Domingo',     email:'pau@vertice.com',      lastContact:'3 días',   score:88, status:'green',
+      projects:[{name:'Mantenimiento web',status:'active',value:'1.800€',progress:100},{name:'Campaña Google',status:'active',value:'2.400€',progress:60},{name:'Vídeo corporativo',status:'done',value:'4.000€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:29,m:30},{l:'Comunicación',v:23,m:25},{l:'Proyectos en plazo',v:22,m:25},{l:'Satisfacción NPS',v:14,m:20}],
+      ai:'Cliente de larga trayectoria con excelente historial. Dos servicios activos en paralelo y la campaña Google al 60% del presupuesto mensual con buenos resultados. Candidato ideal para propuesta de servicio premium anual.' },
+
+    { id:'farmacia',  name:'Farmacia Lorente',   initials:'FL', sector:'Salud',         since:'Abr 2024', mrr:'420€',   contact:'Anna Lorente',    email:'anna@farmacialorente.com', lastContact:'2 días', score:79, status:'green',
+      projects:[{name:'Tienda online',status:'active',value:'3.200€',progress:70},{name:'Redes sociales',status:'active',value:'420€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:27,m:30},{l:'Comunicación',v:20,m:25},{l:'Proyectos en plazo',v:20,m:25},{l:'Satisfacción NPS',v:12,m:20}],
+      ai:'Buena relación en curso. La tienda online está al 70% — fase de integración de pagos. El servicio de redes sociales funciona bien con engagement creciente. Oportunidad de proponer fotografía de producto para el catálogo.' },
+
+    { id:'bellvitge', name:'Clínica Bellvitge',  initials:'CB', sector:'Salud',         since:'Feb 2023', mrr:'1.100€', contact:'Dr. Roca',        email:'roca@bellvitge.es',    lastContact:'1 semana', score:65, status:'amber',
+      projects:[{name:'Portal pacientes',status:'risk',value:'5.600€',progress:45},{name:'SEO médico',status:'done',value:'800€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:22,m:30},{l:'Comunicación',v:15,m:25},{l:'Proyectos en plazo',v:17,m:25},{l:'Satisfacción NPS',v:11,m:20}],
+      ai:'Proyecto de portal de pacientes estancado al 45% por cambios de requisitos internos. Sin feedback sobre las pantallas entregadas desde hace una semana. Recomendación: escalar contacto al Director General para desbloquear.' },
+
+    { id:'neptuno',   name:'Hotel Neptuno',      initials:'HN', sector:'Hostelería',    since:'Jul 2022', mrr:'950€',   contact:'Rosa Méndez',     email:'rosa@hotelneptuno.es', lastContact:'Ayer',     score:84, status:'green',
+      projects:[{name:'Web + reservas',status:'active',value:'2.800€',progress:90},{name:'Fotografía',status:'done',value:'1.200€',progress:100},{name:'Google Ads verano',status:'done',value:'600€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:28,m:30},{l:'Comunicación',v:22,m:25},{l:'Proyectos en plazo',v:21,m:25},{l:'Satisfacción NPS',v:13,m:20}],
+      ai:'Excelente relación. La web con motor de reservas está al 90% — entrega en 4 días. Cliente muy satisfecho con la fotografía. Con la temporada alta en verano, buen momento para proponer campaña de captación directa.' },
+
+    { id:'arco',      name:'Constructora Arco',  initials:'CA', sector:'Construcción',  since:'Oct 2023', mrr:'0€',     contact:'Jaume Arco',      email:'j.arco@arcoconstruc.es', lastContact:'3 sem.',score:31, status:'red',
+      projects:[{name:'Web corporativa',status:'paused',value:'2.200€',progress:15}],
+      breakdown:[{l:'Pagos al día',v:8,m:30},{l:'Comunicación',v:6,m:25},{l:'Proyectos en plazo',v:10,m:25},{l:'Satisfacción NPS',v:7,m:20}],
+      ai:'Cliente inactivo de alta prioridad. El proyecto web está pausado 3 semanas sin comunicación y hay una factura pendiente de cobro. Si no responden esta semana, escalar a reclamación formal. Riesgo de pérdida alto.' },
+
+    { id:'academia',  name:'Academia Idiomas',   initials:'AI', sector:'Educación',     since:'Ene 2025', mrr:'480€',   contact:'Marta Solé',      email:'marta@academiabcn.com', lastContact:'4 días', score:72, status:'green',
+      projects:[{name:'Campañas Meta',status:'active',value:'480€',progress:100},{name:'Landing captación',status:'done',value:'1.400€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:25,m:30},{l:'Comunicación',v:19,m:25},{l:'Proyectos en plazo',v:18,m:25},{l:'Satisfacción NPS',v:10,m:20}],
+      ai:'Cliente recurrente con campañas Meta activas y buenos resultados (+23% conversiones). Con el embudo superior funcionando bien, momento adecuado para proponer Google Ads y ampliar la estrategia de captación.' },
+
+    { id:'ferrer',    name:'Despacho Ferrer',    initials:'DF', sector:'Legal',         since:'May 2022', mrr:'720€',   contact:'Jordi Ferrer',    email:'jferrer@ferrerabogados.es', lastContact:'Ayer', score:87, status:'green',
+      projects:[{name:'Mantenimiento SEO',status:'active',value:'720€',progress:100},{name:'Rediseño web',status:'done',value:'2.600€',progress:100},{name:'Contenidos blog',status:'done',value:'1.100€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:30,m:30},{l:'Comunicación',v:22,m:25},{l:'Proyectos en plazo',v:22,m:25},{l:'Satisfacción NPS',v:13,m:20}],
+      ai:'Cliente fiel de larga trayectoria. Siempre paga en los primeros 5 días y la comunicación es excelente. El SEO de nicho legal tiene posicionamiento de referencia. Candidato ideal para programa de partners y referidos.' },
+
+    { id:'nexo',      name:'Tech Startup Nexo',  initials:'TN', sector:'Tecnología',    since:'Dic 2025', mrr:'1.600€', contact:'Alex Martín',     email:'alex@nexo.tech',       lastContact:'Hoy',      score:61, status:'amber',
+      projects:[{name:'MVP landing',status:'done',value:'2.200€',progress:100},{name:'Growth hacking',status:'active',value:'1.600€',progress:40},{name:'Pitch deck IA',status:'active',value:'800€',progress:25}],
+      breakdown:[{l:'Pagos al día',v:20,m:30},{l:'Comunicación',v:18,m:25},{l:'Proyectos en plazo',v:14,m:25},{l:'Satisfacción NPS',v:9,m:20}],
+      ai:'Startup dinámica con dos proyectos en paralelo. El ritmo de cambios frecuentes genera retrasos. Conviene establecer un proceso de aprobación más ágil. Potencial de MRR alto si consolidan la ronda de financiación en curso.' },
+
+    { id:'mares',     name:'Distribuidora Mares', initials:'DM', sector:'Distribución', since:'Ago 2023', mrr:'540€',   contact:'Núria Mares',     email:'nuria@mares.es',       lastContact:'6 días',   score:58, status:'amber',
+      projects:[{name:'Catálogo online',status:'risk',value:'3.800€',progress:55},{name:'Email marketing',status:'paused',value:'540€',progress:100}],
+      breakdown:[{l:'Pagos al día',v:19,m:30},{l:'Comunicación',v:14,m:25},{l:'Proyectos en plazo',v:16,m:25},{l:'Satisfacción NPS',v:9,m:20}],
+      ai:'Dos proyectos con señales de riesgo. El catálogo online lleva 2 semanas sin validación de diseño y el email marketing está pausado. Precisa atención activa esta semana para evitar el deterioro de la relación.' },
+  ];
+
+  const PROJ_STATUS = {
+    active: { label:'En curso',    color:'var(--blue)',          barColor:'var(--blue)'         },
+    done:   { label:'Completado',  color:'var(--green)',         barColor:'var(--green)'        },
+    risk:   { label:'En riesgo',   color:'var(--amber)',         barColor:'var(--amber)'        },
+    paused: { label:'Pausado',     color:'var(--text-tertiary)', barColor:'var(--border-strong)'},
+  };
+
+  function renderVisor(id) {
+    const c = VISOR_CLIENTS.find(cl => cl.id === id);
+    if (!c) return;
+
+    // chips
+    document.querySelectorAll('.client-chip').forEach(ch =>
+      ch.classList.toggle('active', ch.dataset.cid === id)
+    );
+
+    // Panel A — Datos
+    const statusLabel = {green:'Activo', amber:'En riesgo', red:'Inactivo'}[c.status] || 'Activo';
+    const activeProjCount = c.projects.filter(p => p.status === 'active' || p.status === 'risk').length;
+    document.getElementById('visor-panel-a').innerHTML = `
+      <div class="visor-panel-header">
+        <span class="visor-panel-title">Datos del cliente</span>
+        <span class="card-panel-action">Editar</span>
+      </div>
+      <div class="visor-panel-body">
+        <div class="client-header">
+          <div class="client-avatar-lg">${c.initials}</div>
+          <div>
+            <div class="client-name-lg">${c.name}</div>
+            <div class="client-sector">${c.sector}</div>
+          </div>
+          <span class="client-status-badge status-${c.status}">${statusLabel}</span>
+        </div>
+        <div class="client-meta-grid">
+          <div><div class="client-meta-label">MRR</div><div class="client-meta-value">${c.mrr}</div><div class="client-meta-sub">mensual</div></div>
+          <div><div class="client-meta-label">Cliente desde</div><div class="client-meta-value" style="font-size:12px;">${c.since}</div><div class="client-meta-sub">inicio relación</div></div>
+          <div><div class="client-meta-label">Último contacto</div><div class="client-meta-value" style="font-size:12px;">${c.lastContact}</div><div class="client-meta-sub">respuesta</div></div>
+          <div><div class="client-meta-label">Proyectos</div><div class="client-meta-value">${c.projects.length}</div><div class="client-meta-sub">${activeProjCount} en curso</div></div>
+          <div style="grid-column:span 2;"><div class="client-meta-label">Contacto</div><div class="client-meta-value" style="font-family:'DM Sans',sans-serif;font-size:12.5px;">${c.contact}</div><div class="client-meta-sub">${c.email}</div></div>
+        </div>
+      </div>`;
+
+    // Panel B — Score de salud
+    const circ = 251.33;
+    const fill = (c.score / 100 * circ).toFixed(1);
+    const scoreColor = c.score >= 80 ? 'var(--green)' : c.score >= 60 ? 'var(--amber)' : 'var(--red)';
+    const scoreLabel = c.score >= 80 ? 'Salud excelente' : c.score >= 60 ? 'Salud moderada' : 'Requiere atención';
+    const barsHTML = c.breakdown.map(b => {
+      const pct = b.v / b.m;
+      const bc  = pct >= 0.8 ? 'var(--green)' : pct >= 0.5 ? 'var(--amber)' : 'var(--red)';
+      return `<div class="score-br-row">
+        <div class="score-br-label">${b.l}</div>
+        <div class="score-br-bar-wrap"><div class="score-br-bar" style="width:${(pct*100).toFixed(0)}%;background:${bc};"></div></div>
+        <div class="score-br-val">${b.v}/${b.m}</div>
+      </div>`;
+    }).join('');
+    document.getElementById('visor-panel-b').innerHTML = `
+      <div class="visor-panel-header"><span class="visor-panel-title">Score de salud</span></div>
+      <div class="score-gauge-wrap">
+        <svg class="score-gauge-svg" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="var(--border)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="${scoreColor}" stroke-width="8"
+            stroke-dasharray="${fill} ${circ}" stroke-linecap="round" transform="rotate(-90 50 50)"
+            style="transition:stroke-dasharray .5s ease;"/>
+          <text x="50" y="47" text-anchor="middle" dominant-baseline="central"
+            font-size="22" font-weight="600" font-family="DM Mono,monospace" fill="var(--text-primary)">${c.score}</text>
+          <text x="50" y="64" text-anchor="middle" font-size="9"
+            fill="var(--text-tertiary)" font-family="DM Sans,sans-serif">/100</text>
+        </svg>
+        <div class="score-gauge-lbl" style="color:${scoreColor};">${scoreLabel}</div>
+      </div>
+      <div class="score-breakdown">${barsHTML}</div>`;
+
+    // Panel C — Proyectos
+    const projHTML = c.projects.map(p => {
+      const s = PROJ_STATUS[p.status] || PROJ_STATUS.paused;
+      return `<div class="proj-row">
+        <div class="proj-status-dot" style="background:${s.color};"></div>
+        <div class="proj-info">
+          <div class="proj-name">${p.name}</div>
+          <div class="proj-progress-wrap">
+            <div class="proj-bar-wrap"><div class="proj-bar" style="width:${p.progress}%;background:${s.barColor};"></div></div>
+            <div class="proj-pct">${p.progress}%</div>
+          </div>
+        </div>
+        <div class="proj-value">${p.value}</div>
+      </div>`;
+    }).join('');
+    document.getElementById('visor-panel-c').innerHTML = `
+      <div class="visor-panel-header">
+        <span class="visor-panel-title">Proyectos</span>
+        <span class="card-panel-action">Nuevo proyecto</span>
+      </div>
+      <div class="proj-list">${projHTML}</div>`;
+
+    // Panel D — Análisis IA
+    document.getElementById('visor-panel-d').innerHTML = `
+      <div class="visor-panel-header">
+        <span class="visor-panel-title">Análisis IA</span>
+        <span style="display:flex;align-items:center;gap:4px;font-size:10.5px;color:var(--text-tertiary);">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>Zaguán IA
+        </span>
+      </div>
+      <div class="ai-panel-body"><p class="ai-insight-text">${c.ai}</p></div>`;
+  }
+
+  // Inicializar chips y vista por defecto
+  (function initVisor() {
+    const wrap = document.getElementById('visor-chips');
+    if (!wrap) return;
+    wrap.innerHTML = VISOR_CLIENTS.map(c =>
+      `<div class="client-chip" data-cid="${c.id}" onclick="renderVisor('${c.id}')">
+        <span class="chip-dot chip-dot-${c.status}"></span>${c.name}
+      </div>`
+    ).join('');
+    renderVisor('biplaza');
+  })();
 
   // AI greeting dinámico
   (function() {
