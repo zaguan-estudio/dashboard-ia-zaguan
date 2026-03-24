@@ -1376,6 +1376,83 @@
 
         </div><!-- /rsm-modules -->
 
+        <!-- Alertas críticas en Resumen -->
+        <div class="alert-table" style="margin-top:16px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 16px 10px 16px;background:var(--red-bg);border-bottom:1px solid var(--red-border);">
+            <div style="display:flex;align-items:center;gap:8px;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              <span style="font-size:12px;font-weight:600;color:var(--red);">Alertas críticas</span>
+              <span style="font-size:10px;font-weight:700;background:var(--red);color:#fff;padding:1px 7px;border-radius:20px;">2</span>
+            </div>
+            <span onclick="navigate(document.querySelector('[data-section=alertas]'))" style="font-size:11px;color:var(--red);cursor:pointer;display:flex;align-items:center;gap:4px;font-weight:500;">
+              Ver todas las alertas
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 110px;padding:7px 14px 7px 18px;background:var(--bg-elevated);border-bottom:1px solid var(--border);">
+            <span style="font-size:10px;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.07em;">Alerta · Responsable</span>
+            <span style="font-size:10px;font-weight:600;color:var(--text-tertiary);text-transform:uppercase;letter-spacing:.07em;">Cómo resolverlo</span>
+            <span></span>
+          </div>
+
+          <!-- Fila crítica 1 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 110px;border-bottom:1px solid var(--border);position:relative;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);"></div>
+            <div style="padding:12px 14px 12px 20px;">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+                <span class="alert-area proyectos">Proyectos</span>
+                <span style="font-size:10.5px;color:var(--text-tertiary);display:flex;align-items:center;gap:3px;">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Ariadna
+                </span>
+              </div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:2px;line-height:1.3;">Portal Clínica Bellvitge bloqueado al 45%</div>
+              <div style="font-size:11.5px;color:var(--text-secondary);">3 semanas sin avance. Cliente preguntando.</div>
+            </div>
+            <div style="padding:12px 14px;display:flex;gap:7px;align-items:flex-start;">
+              <div class="how-icon crit" style="margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div style="font-size:11.5px;color:var(--text-secondary);line-height:1.55;">Reunión urgente con Ariadna hoy. Identificar bloqueador e informar al cliente antes de que pregunte.</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;padding:12px 14px;">
+              <button onclick="navigate(document.querySelector('[data-section=alertas]'))" style="display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:6px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all .12s;white-space:nowrap;" onmouseover="this.style.background='var(--red)';this.style.color='#fff'" onmouseout="this.style.background='var(--red-bg)';this.style.color='var(--red)'">
+                Ver detalle
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Fila crítica 2 -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 110px;position:relative;">
+            <div style="position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);"></div>
+            <div style="padding:12px 14px 12px 20px;">
+              <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px;">
+                <span class="alert-area proyectos">Proyectos</span>
+                <span style="font-size:10.5px;color:var(--text-tertiary);display:flex;align-items:center;gap:3px;">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Eduardo
+                </span>
+              </div>
+              <div style="font-size:13px;font-weight:600;color:var(--text-primary);margin-bottom:2px;line-height:1.3;">Simyo · Web — entrega comprometida para HOY</div>
+              <div style="font-size:11.5px;color:var(--text-secondary);">Sin confirmación de cierre. Riesgo reputacional.</div>
+            </div>
+            <div style="padding:12px 14px;display:flex;gap:7px;align-items:flex-start;">
+              <div class="how-icon crit" style="margin-top:1px;">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div style="font-size:11.5px;color:var(--text-secondary);line-height:1.55;">Contactar a Eduardo antes de las 12h. Si no está al 100%, notificar al cliente con nueva fecha.</div>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:center;padding:12px 14px;">
+              <button onclick="navigate(document.querySelector('[data-section=alertas]'))" style="display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:6px;border:1px solid var(--red-border);background:var(--red-bg);color:var(--red);font-size:11px;font-family:'DM Sans',sans-serif;font-weight:500;cursor:pointer;transition:all .12s;white-space:nowrap;" onmouseover="this.style.background='var(--red)';this.style.color='#fff'" onmouseout="this.style.background='var(--red-bg)';this.style.color='var(--red)'">
+                Ver detalle
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /alertas-criticas -->
+
       </section>
 
 
