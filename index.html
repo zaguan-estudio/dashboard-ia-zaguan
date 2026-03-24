@@ -721,6 +721,34 @@
     .proy-prog-bar-wrap { flex:1; height:5px; background:var(--border); border-radius:3px; overflow:hidden; }
     .proy-prog-bar { height:5px; border-radius:3px; }
     .proy-prog-cnt { font-size:11px; font-family:'DM Mono',monospace; color:var(--text-tertiary); width:20px; text-align:right; flex-shrink:0; }
+
+    /* ─── EQUIPO DIRECCIÓN ──────────────────────────────── */
+    .eq-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:14px; }
+    .eq-card { background:var(--bg-elevated); border:1px solid var(--border); border-radius:9px; border-top-width:3px; }
+    .eq-card-green { border-top-color:var(--green); }
+    .eq-card-amber { border-top-color:var(--amber); }
+    .eq-card-red   { border-top-color:var(--red); }
+    .eq-card-hdr { padding:14px 16px 12px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:11px; }
+    .eq-avatar { width:36px; height:36px; border-radius:8px; background:var(--text-primary); color:#fff; font-size:12px; font-weight:600; display:flex; align-items:center; justify-content:center; flex-shrink:0; letter-spacing:.5px; }
+    .eq-name { font-size:13.5px; font-weight:600; color:var(--text-primary); line-height:1.2; }
+    .eq-role { font-size:11px; color:var(--text-tertiary); margin-top:2px; }
+    .eq-badge { margin-left:auto; font-size:9px; font-weight:700; padding:2px 6px; border-radius:4px; letter-spacing:.05em; flex-shrink:0; white-space:nowrap; }
+    .eq-metrics { padding:12px 16px; border-bottom:1px solid var(--border); display:flex; flex-direction:column; gap:9px; }
+    .eq-metric-row { display:flex; align-items:center; gap:8px; }
+    .eq-metric-lbl { font-size:11px; color:var(--text-secondary); width:106px; flex-shrink:0; }
+    .eq-metric-bar-wrap { flex:1; height:5px; background:var(--border); border-radius:3px; overflow:hidden; }
+    .eq-metric-bar { height:5px; border-radius:3px; }
+    .eq-metric-val { font-size:11px; font-family:'DM Mono',monospace; color:var(--text-primary); font-weight:600; width:42px; text-align:right; flex-shrink:0; }
+    .eq-projects { padding:12px 16px; border-bottom:1px solid var(--border); }
+    .eq-proj-lbl { font-size:10px; font-weight:600; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.07em; margin-bottom:8px; }
+    .eq-proj-row { display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+    .eq-proj-row:last-child { margin-bottom:0; }
+    .eq-proj-dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+    .eq-proj-name { font-size:11.5px; color:var(--text-secondary); flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .eq-proj-tag { font-size:9px; font-weight:700; padding:1px 5px; border-radius:3px; flex-shrink:0; letter-spacing:.03em; }
+    .eq-footer { padding:10px 16px; display:flex; align-items:center; justify-content:space-between; }
+    .eq-hitos-lbl { font-size:11px; color:var(--text-tertiary); }
+    .eq-hitos-lbl strong { color:var(--text-primary); font-family:'DM Mono',monospace; font-style:normal; }
   </style>
 </head>
 <body>
@@ -765,6 +793,12 @@
           Resumen
         </div>
 
+        <div class="nav-item" data-section="objetivos" onclick="navigate(this)">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+          </svg>
+          Objetivos
+        </div>
 
         <div class="nav-item" data-section="presupuestos" onclick="navigate(this)">
           <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -798,13 +832,6 @@
             <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
           Finanzas
-        </div>
-
-        <div class="nav-item" data-section="objetivos" onclick="navigate(this)">
-          <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
-          </svg>
-          Objetivos
         </div>
 
         <div class="nav-item" data-section="alertas" onclick="navigate(this)">
@@ -1430,15 +1457,230 @@
 
       <!-- SECCIÓN 5: Equipo -->
       <section id="section-equipo" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-          </svg>
-          <p>Equipo</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <!-- IA Banner Equipo -->
+        <div class="ai-banner">
+          <div class="ai-banner-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div class="ai-banner-sup">Zaguán IA · Estado del equipo</div>
+            <div class="ai-banner-title">Equipo al 83% de productividad — Jesús necesita desbloqueo urgente en Bellvitge</div>
+            <p class="ai-banner-text">El equipo gestiona 9 proyectos activos con score medio de <strong>75/100</strong>. <strong>Eduardo</strong> cierra Simyo hoy con carga máxima — no asignar nuevos proyectos esta semana. <strong>Jesús</strong> tiene Bellvitge bloqueado al 45% con 3 semanas de retraso; sin intervención esta semana el bonus trimestral queda comprometido. <strong>María</strong> está en su mejor momento del mes: 2 proyectos en cierre que liberarán capacidad a partir del 25 mar.</p>
+          </div>
+          <div class="ai-banner-date">Lun 23 mar</div>
         </div>
+
+        <!-- KPI globales equipo -->
+        <div class="proy-kpi">
+          <div class="proy-kpi-card">
+            <div class="proy-kpi-val">3</div>
+            <div class="proy-kpi-lbl">Empleados activos</div>
+          </div>
+          <div class="proy-kpi-card">
+            <div class="proy-kpi-val" style="color:var(--blue);">83%</div>
+            <div class="proy-kpi-lbl">Productividad media</div>
+          </div>
+          <div class="proy-kpi-card">
+            <div class="proy-kpi-val">9</div>
+            <div class="proy-kpi-lbl">Proyectos asignados</div>
+          </div>
+          <div class="proy-kpi-card">
+            <div class="proy-kpi-val" style="color:var(--green);">13</div>
+            <div class="proy-kpi-lbl">Hitos completados (mes)</div>
+          </div>
+          <div class="proy-kpi-card">
+            <div class="proy-kpi-val">75<span style="font-size:14px;font-weight:400;color:var(--text-tertiary);">/100</span></div>
+            <div class="proy-kpi-lbl">Score IA medio</div>
+          </div>
+        </div>
+
+        <!-- Cards individuales -->
+        <div class="eq-grid">
+
+          <!-- Eduardo -->
+          <div class="eq-card eq-card-amber">
+            <div class="eq-card-hdr">
+              <div class="eq-avatar">ED</div>
+              <div>
+                <div class="eq-name">Eduardo D.</div>
+                <div class="eq-role">Director Creativo</div>
+              </div>
+              <div class="eq-badge" style="background:var(--amber-bg);color:var(--amber);">CARGA ALTA</div>
+            </div>
+            <div class="eq-metrics">
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Productividad</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:85%;background:var(--amber);"></div></div>
+                <span class="eq-metric-val">85%</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Score IA</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:72%;background:var(--amber);"></div></div>
+                <span class="eq-metric-val">72 / 100</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Bonus cumplimiento</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:90%;background:var(--green);"></div></div>
+                <span class="eq-metric-val">90%</span>
+              </div>
+            </div>
+            <div class="eq-projects">
+              <div class="eq-proj-lbl">Proyectos activos · 3</div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--red);"></div>
+                <span class="eq-proj-name">Simyo · Web corporativa</span>
+                <span class="eq-proj-tag" style="background:var(--red-bg);color:var(--red);">HOY</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--text-tertiary);"></div>
+                <span class="eq-proj-name">Altafit · App móvil iOS/Android</span>
+                <span class="eq-proj-tag" style="background:var(--bg-surface);color:var(--text-tertiary);border:1px solid var(--border);">abr 30</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--text-tertiary);"></div>
+                <span class="eq-proj-name">Mares · Catálogo digital B2B</span>
+                <span class="eq-proj-tag" style="background:var(--bg-surface);color:var(--text-tertiary);border:1px solid var(--border);">abr 15</span>
+              </div>
+            </div>
+            <div class="eq-footer">
+              <span class="eq-hitos-lbl">Hitos mes: <strong>4</strong></span>
+              <span style="font-size:10.5px;color:var(--amber);font-weight:500;">⚠ No asignar proyectos nuevos</span>
+            </div>
+          </div>
+
+          <!-- Jesús -->
+          <div class="eq-card eq-card-red">
+            <div class="eq-card-hdr">
+              <div class="eq-avatar">JR</div>
+              <div>
+                <div class="eq-name">Jesús R.</div>
+                <div class="eq-role">Desarrollo Full-stack</div>
+              </div>
+              <div class="eq-badge" style="background:var(--red-bg);color:var(--red);">PROYECTO RIESGO</div>
+            </div>
+            <div class="eq-metrics">
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Productividad</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:76%;background:var(--amber);"></div></div>
+                <span class="eq-metric-val">76%</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Score IA</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:68%;background:var(--red);"></div></div>
+                <span class="eq-metric-val">68 / 100</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Bonus cumplimiento</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:75%;background:var(--amber);"></div></div>
+                <span class="eq-metric-val">75%</span>
+              </div>
+            </div>
+            <div class="eq-projects">
+              <div class="eq-proj-lbl">Proyectos activos · 3</div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--blue);"></div>
+                <span class="eq-proj-name">Hotel Neptuno · Motor reservas</span>
+                <span class="eq-proj-tag" style="background:var(--blue-bg);color:var(--blue);">90%</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--red);"></div>
+                <span class="eq-proj-name">Clínica Bellvitge · Portal</span>
+                <span class="eq-proj-tag" style="background:var(--red-bg);color:var(--red);">RIESGO</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--blue);"></div>
+                <span class="eq-proj-name">La Masia · Identidad visual</span>
+                <span class="eq-proj-tag" style="background:var(--bg-surface);color:var(--text-tertiary);border:1px solid var(--border);">abr 10</span>
+              </div>
+            </div>
+            <div class="eq-footer">
+              <span class="eq-hitos-lbl">Hitos mes: <strong>6</strong></span>
+              <span style="font-size:10.5px;color:var(--red);font-weight:500;">● Bonus trimestral en riesgo</span>
+            </div>
+          </div>
+
+          <!-- María -->
+          <div class="eq-card eq-card-green">
+            <div class="eq-card-hdr">
+              <div class="eq-avatar">MG</div>
+              <div>
+                <div class="eq-name">María G.</div>
+                <div class="eq-role">Marketing &amp; Growth</div>
+              </div>
+              <div class="eq-badge" style="background:var(--green-bg);color:var(--green);">RENDIMIENTO ALTO</div>
+            </div>
+            <div class="eq-metrics">
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Productividad</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:88%;background:var(--green);"></div></div>
+                <span class="eq-metric-val">88%</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Score IA</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:84%;background:var(--green);"></div></div>
+                <span class="eq-metric-val">84 / 100</span>
+              </div>
+              <div class="eq-metric-row">
+                <span class="eq-metric-lbl">Bonus cumplimiento</span>
+                <div class="eq-metric-bar-wrap"><div class="eq-metric-bar" style="width:95%;background:var(--green);"></div></div>
+                <span class="eq-metric-val">95%</span>
+              </div>
+            </div>
+            <div class="eq-projects">
+              <div class="eq-proj-lbl">Proyectos activos · 3</div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--blue);"></div>
+                <span class="eq-proj-name">Farmacia Lorente · Tienda online</span>
+                <span class="eq-proj-tag" style="background:var(--blue-bg);color:var(--blue);">70%</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--green);"></div>
+                <span class="eq-proj-name">Tech Nexo · Growth hacking Q2</span>
+                <span class="eq-proj-tag" style="background:var(--green-bg);color:var(--green);">95%</span>
+              </div>
+              <div class="eq-proj-row">
+                <div class="eq-proj-dot" style="background:var(--green);"></div>
+                <span class="eq-proj-name">Grupo Vértice · Google Ads</span>
+                <span class="eq-proj-tag" style="background:var(--green-bg);color:var(--green);">80%</span>
+              </div>
+            </div>
+            <div class="eq-footer">
+              <span class="eq-hitos-lbl">Hitos mes: <strong>3</strong></span>
+              <span style="font-size:10.5px;color:var(--green);font-weight:500;">✓ Libera capacidad próxima semana</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Avisos inteligentes predictivos -->
+        <div class="proy-panel">
+          <div class="proy-panel-title">Avisos inteligentes · Predicciones del sistema</div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--red-bg);color:var(--red);">CRÍTICO</div>
+            <div>
+              <div class="proy-risk-name">Bellvitge bloqueará el bonus trimestral de Jesús</div>
+              <div class="proy-risk-detail">Sin desbloqueo en 48h Jesús no alcanzará el umbral de entrega en plazo (80%) y perderá el 25% de su incentivo trimestral. Acción: reunión directiva con Dr. Roca hoy para cerrar alcance definitivo.</div>
+            </div>
+          </div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--amber-bg);color:var(--amber);">ATENCIÓN</div>
+            <div>
+              <div class="proy-risk-name">Eduardo al límite de capacidad — riesgo de efecto cascada en abril</div>
+              <div class="proy-risk-detail">Si Simyo no cierra hoy la carga de Eduardo se acumulará sobre Altafit (inicio planificado semana que viene). Cualquier nuevo proyecto esta semana retrasará el pipeline completo de abril.</div>
+            </div>
+          </div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--green-bg);color:var(--green);">OPORTUNIDAD</div>
+            <div>
+              <div class="proy-risk-name">María libera capacidad el 25 mar — ventana de asignación abierta</div>
+              <div class="proy-risk-detail">Con Tech Nexo y Grupo Vértice en cierre esta semana, María tendrá disponibilidad para 1-2 proyectos nuevos. Momento óptimo para incorporar Biplaza (4.800€) o Inmob. Torres si se aprueban los presupuestos.</div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <!-- SECCIÓN 6: Finanzas -->
