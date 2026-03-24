@@ -485,10 +485,28 @@
       font-size: 11px;
       color: var(--text-tertiary);
       white-space: nowrap;
-      flex-shrink: 0;
-      padding-top: 2px;
       font-family: 'DM Mono', monospace;
     }
+    .ai-banner-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+    .ai-refresh-btn {
+      display: flex; align-items: center; gap: 5px;
+      padding: 5px 10px; border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-surface);
+      font-size: 11px; font-family: 'DM Sans', sans-serif;
+      color: var(--text-secondary); cursor: pointer;
+      transition: all .12s; white-space: nowrap;
+    }
+    .ai-refresh-btn:hover { background: var(--text-primary); color: #fff; border-color: var(--text-primary); }
+    .ai-refresh-btn svg { flex-shrink: 0; }
 
     .kpi-grid {
       display: grid;
@@ -962,7 +980,13 @@
             <div class="ai-banner-title" id="ai-greeting-title">Cargando…</div>
             <p class="ai-banner-text">Arrancas la semana con buenas perspectivas. Hay <strong>2 presupuestos pendientes</strong> por un total de <strong>18.200€</strong> — el de Altafit vence el miércoles. Eduardo tiene carga alta esta semana; considera redistribuir tareas antes del martes.</p>
           </div>
-          <div class="ai-banner-date" id="ai-greeting-date"></div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date" id="ai-greeting-date"></div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Actualizar estado
+            </button>
+          </div>
         </div>
 
         <!-- KPI Grid -->
@@ -1203,7 +1227,13 @@
             <div class="ai-banner-title">28.760€ en juego — Altafit decide el resultado del mes</div>
             <p class="ai-banner-text">El pipeline está concentrado en negociación: <strong>Altafit (8.200€)</strong> es la mayor oportunidad activa y vence el miércoles — contacto hoy puede cerrar el mejor mes del año. <strong>Bellvitge (5.600€) y Mares (3.800€)</strong> superan los 11 días sin respuesta, por encima de la media de cierre de 12 días; requieren seguimiento urgente. La tasa de conversión actual del <strong>67%</strong> está 8 puntos por debajo del objetivo del 75% — el patrón sugiere que el problema está en el timing de seguimiento, no en el precio.</p>
           </div>
-          <div class="ai-banner-date">Lun 23 mar</div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date">Lun 23 mar</div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Actualizar estado
+            </button>
+          </div>
         </div>
 
         <!-- KPI Row -->
@@ -1320,7 +1350,13 @@
             <div class="ai-banner-title">Cartera al 72% de avance medio — entrega crítica hoy en Simyo, decisión urgente</div>
             <p class="ai-banner-text">El portfolio activo (12 proyectos, 36.600€) avanza con buena cadencia general pero hay una alerta crítica: <strong>Simyo · Web corporativa</strong> tiene entrega pactada para hoy — confirmar con Eduardo el estado de cierre antes de las 14h. <strong>Clínica Bellvitge</strong> es el único proyecto en riesgo real (45%, 3 semanas de retraso); sin un hito cerrado esta semana la relación con el cliente se deteriorará. En el lado positivo, <strong>Tech Nexo y Grupo Vértice</strong> están en revisión final y deberían liberar 4.000€ en los próximos 7 días.</p>
           </div>
-          <div class="ai-banner-date">Lun 23 mar</div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date">Lun 23 mar</div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Actualizar estado
+            </button>
+          </div>
         </div>
 
         <!-- KPI Row -->
@@ -1501,7 +1537,13 @@
             <div class="ai-banner-title">Equipo al 83% de productividad — Jesús necesita desbloqueo urgente en Bellvitge</div>
             <p class="ai-banner-text">El equipo gestiona 9 proyectos activos con score medio de <strong>75/100</strong>. <strong>Eduardo</strong> cierra Simyo hoy con carga máxima — no asignar nuevos proyectos esta semana. <strong>Jesús</strong> tiene Bellvitge bloqueado al 45% con 3 semanas de retraso; sin intervención esta semana el bonus trimestral queda comprometido. <strong>María</strong> está en su mejor momento del mes: 2 proyectos en cierre que liberarán capacidad a partir del 25 mar.</p>
           </div>
-          <div class="ai-banner-date">Lun 23 mar</div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date">Lun 23 mar</div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Actualizar estado
+            </button>
+          </div>
         </div>
 
         <!-- KPI globales equipo -->
@@ -1729,7 +1771,13 @@
             <div class="ai-banner-title">MRR récord en marzo (+27%) — balance positivo y tendencia al alza, vigila los cobros pendientes</div>
             <p class="ai-banner-text">La empresa cierra marzo con el mejor mes histórico: <strong>12.400€ facturados</strong> (+27% vs febrero), dejando un resultado neto de 4.200€ con margen del 34%. El acumulado Q1 suma 30.600€, superando el objetivo trimestral en 2.600€. Punto de atención: <strong>9.800€ en facturas pendientes</strong>, incluyendo una vencida de <strong>Constructora Arco (2.200€)</strong>. Score de salud financiera 78/100 — crecimiento récord pero lastrado por concentración de clientes y el impago pendiente.</p>
           </div>
-          <div class="ai-banner-date">Lun 23 mar</div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date">Lun 23 mar</div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Actualizar estado
+            </button>
+          </div>
         </div>
 
         <!-- Fila superior: Score global + 4 KPIs -->
