@@ -551,6 +551,62 @@
     .kpi-card-delta.muted { color: var(--text-tertiary); }
     .kpi-sparkline { margin-top: 12px; }
 
+    /* ─── RESUMEN EJECUTIVO ──────────────────────── */
+    .rsm-hero { display:grid; grid-template-columns:148px 1fr 1fr 1fr 1fr; gap:12px; margin-bottom:14px; }
+    .rsm-health-card {
+      background:var(--bg-surface); border:1px solid var(--border); border-radius:9px;
+      padding:16px 14px; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; gap:8px;
+    }
+    .rsm-health-ring { width:78px; height:78px; border-radius:50%; padding:7px; }
+    .rsm-health-inner {
+      width:100%; height:100%; border-radius:50%; background:var(--bg-surface);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+    }
+    .rsm-health-score { font-size:24px; font-weight:700; line-height:1; color:var(--text-primary); }
+    .rsm-health-scale { font-size:10px; color:var(--text-secondary); }
+    .rsm-health-lbl   { font-size:11.5px; font-weight:600; color:var(--text-primary); }
+    .rsm-health-delta { font-size:10px; }
+
+    .rsm-modules { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin-bottom:14px; }
+    .rsm-mod-card {
+      background:var(--bg-elevated); border:1px solid var(--border); border-top-width:3px;
+      border-radius:9px; padding:14px 15px; display:flex; flex-direction:column; gap:7px;
+    }
+    .rsm-card-green { border-top-color:var(--green); }
+    .rsm-card-amber { border-top-color:var(--amber); }
+    .rsm-card-red   { border-top-color:var(--red);   }
+    .rsm-card-blue  { border-top-color:var(--blue);  }
+    .rsm-mod-header { display:flex; align-items:center; justify-content:space-between; }
+    .rsm-mod-name {
+      display:flex; align-items:center; gap:5px; font-size:10px; font-weight:600;
+      text-transform:uppercase; letter-spacing:.05em; color:var(--text-secondary);
+    }
+    .rsm-mod-badge { font-size:9px; padding:2px 6px; border-radius:10px; font-weight:600; }
+    .rsm-badge-green { background:var(--green-bg); color:var(--green); }
+    .rsm-badge-amber { background:var(--amber-bg); color:var(--amber); }
+    .rsm-badge-red   { background:var(--red-bg);   color:var(--red);   }
+    .rsm-mod-main { font-size:20px; font-weight:700; line-height:1.1; color:var(--text-primary); }
+    .rsm-mod-main span { font-size:11px; font-weight:400; color:var(--text-secondary); }
+    .rsm-mod-rows { display:flex; flex-direction:column; gap:4px; }
+    .rsm-mod-row { display:flex; align-items:center; justify-content:space-between; font-size:10.5px; color:var(--text-secondary); }
+    .rsm-mod-row strong { color:var(--text-primary); font-weight:600; }
+    .rsm-stat-bars { display:flex; flex-direction:column; gap:4px; }
+    .rsm-stat-row  { display:flex; align-items:center; gap:5px; font-size:9.5px; color:var(--text-secondary); }
+    .rsm-stat-lbl  { width:52px; flex-shrink:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+    .rsm-stat-val  { width:26px; text-align:right; flex-shrink:0; font-size:9px; }
+    .rsm-stat-bar-wrap { flex:1; background:var(--border); border-radius:2px; height:5px; overflow:hidden; }
+    .rsm-stat-bar  { height:100%; border-radius:2px; max-width:100%; }
+    .rsm-mini-bars { display:flex; align-items:flex-end; gap:3px; height:20px; }
+    .rsm-mini-bar  { flex:1; border-radius:2px 2px 0 0; min-height:3px; }
+    .rsm-ai-tip {
+      display:flex; align-items:flex-start; gap:5px;
+      background:var(--bg-surface); border:1px solid var(--border);
+      border-radius:6px; padding:6px 8px; font-size:10px;
+      line-height:1.4; color:var(--text-secondary); margin-top:auto;
+    }
+    .rsm-ai-tip svg { flex-shrink:0; margin-top:1px; }
+
     .resumen-bottom {
       display: grid;
       grid-template-columns: 1fr 300px;
@@ -986,11 +1042,22 @@
           </div>
         </div>
 
-        <!-- KPI Grid -->
-        <div class="kpi-grid">
+        <!-- Hero: Salud global + KPIs principales -->
+        <div class="rsm-hero">
+
+          <div class="rsm-health-card">
+            <div class="rsm-health-ring" style="background:conic-gradient(var(--amber) 0% 74%,var(--border) 74% 100%);">
+              <div class="rsm-health-inner">
+                <div class="rsm-health-score">74</div>
+                <div class="rsm-health-scale">/100</div>
+              </div>
+            </div>
+            <div class="rsm-health-lbl">Salud empresa</div>
+            <div class="rsm-health-delta" style="color:var(--amber)">↓ −6 pts esta semana</div>
+          </div>
 
           <div class="kpi-card">
-            <div class="kpi-card-label">MRR</div>
+            <div class="kpi-card-label">MRR · Finanzas</div>
             <div class="kpi-card-value">12.400€</div>
             <div class="kpi-card-delta green">↑ +8% vs mes anterior</div>
             <div class="kpi-sparkline">
@@ -1014,9 +1081,9 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-card-label">Presupuestos pendientes</div>
-            <div class="kpi-card-value">18.200€</div>
-            <div class="kpi-card-delta red">⏱ 1 vence el miércoles</div>
+            <div class="kpi-card-label">Pipeline activo</div>
+            <div class="kpi-card-value">28.760€</div>
+            <div class="kpi-card-delta red">⏱ Altafit vence el miércoles</div>
             <div class="kpi-sparkline">
               <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
                 <polyline points="0,21 14,11 28,25 42,7 57,11 71,4 85,16 100,11"
@@ -1026,18 +1093,219 @@
           </div>
 
           <div class="kpi-card">
-            <div class="kpi-card-label">Score empresa</div>
-            <div class="kpi-card-value">74<span>/100</span></div>
-            <div class="kpi-card-delta muted">↓ 6 pts esta semana</div>
+            <div class="kpi-card-label">Score equipo</div>
+            <div class="kpi-card-value">79<span>/100</span></div>
+            <div class="kpi-card-delta amber">⚠ Eduardo sobrecargado</div>
             <div class="kpi-sparkline">
               <svg viewBox="0 0 100 30" width="100%" height="28" preserveAspectRatio="none">
-                <polyline points="0,4 12,7 25,11 37,4 50,16 62,11 75,21 87,16 100,22"
-                  fill="none" stroke="var(--border-strong)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+                <polyline points="0,14 14,11 28,7 42,11 57,14 71,11 85,8 100,11"
+                  fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
               </svg>
             </div>
           </div>
 
-        </div><!-- /kpi-grid -->
+        </div><!-- /rsm-hero -->
+
+        <!-- Módulos: estado por área -->
+        <div class="rsm-modules">
+
+          <!-- Finanzas -->
+          <div class="rsm-mod-card rsm-card-green">
+            <div class="rsm-mod-header">
+              <div class="rsm-mod-name">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                Finanzas
+              </div>
+              <span class="rsm-mod-badge rsm-badge-green">Saludable</span>
+            </div>
+            <div class="rsm-mod-main">12.400€ <span>MRR</span></div>
+            <div class="rsm-mod-rows">
+              <div class="rsm-mod-row"><span>Margen neto</span><strong>38%</strong></div>
+              <div class="rsm-mod-row"><span>Cobros pend.</span><strong style="color:var(--amber)">3.200€</strong></div>
+              <div class="rsm-mod-row"><span>P&amp;L marzo</span><strong style="color:var(--green)">+4.780€</strong></div>
+            </div>
+            <div class="rsm-mini-bars">
+              <div class="rsm-mini-bar" style="height:10px;background:var(--border-strong)"></div>
+              <div class="rsm-mini-bar" style="height:12px;background:var(--border-strong)"></div>
+              <div class="rsm-mini-bar" style="height:9px;background:var(--border-strong)"></div>
+              <div class="rsm-mini-bar" style="height:11px;background:var(--border-strong)"></div>
+              <div class="rsm-mini-bar" style="height:14px;background:var(--border-strong)"></div>
+              <div class="rsm-mini-bar" style="height:18px;background:var(--green)"></div>
+            </div>
+            <div class="rsm-ai-tip">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Primer mes sobre 12K€. Mantener ritmo cubre el objetivo Q2.
+            </div>
+          </div>
+
+          <!-- Proyectos -->
+          <div class="rsm-mod-card rsm-card-amber">
+            <div class="rsm-mod-header">
+              <div class="rsm-mod-name">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                Proyectos
+              </div>
+              <span class="rsm-mod-badge rsm-badge-amber">Atención</span>
+            </div>
+            <div class="rsm-mod-main">7 <span>activos</span></div>
+            <div class="rsm-mod-rows">
+              <div class="rsm-mod-row"><span>En curso</span><strong>5</strong></div>
+              <div class="rsm-mod-row"><span>En riesgo</span><strong style="color:var(--amber)">2</strong></div>
+              <div class="rsm-mod-row"><span>Entrega mañana</span><strong style="color:var(--red)">1</strong></div>
+            </div>
+            <div class="rsm-stat-bars">
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">En curso</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:71%;background:var(--blue)"></div></div>
+                <span class="rsm-stat-val">5</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Riesgo</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:29%;background:var(--amber)"></div></div>
+                <span class="rsm-stat-val">2</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Completados</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:43%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">3</span>
+              </div>
+            </div>
+            <div class="rsm-ai-tip">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Altafit 5 días sin avance — sin intervención esta semana entra en retraso.
+            </div>
+          </div>
+
+          <!-- Presupuestos -->
+          <div class="rsm-mod-card rsm-card-amber">
+            <div class="rsm-mod-header">
+              <div class="rsm-mod-name">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                Presupuestos
+              </div>
+              <span class="rsm-mod-badge rsm-badge-amber">Seguimiento</span>
+            </div>
+            <div class="rsm-mod-main">28.760€ <span>pipeline</span></div>
+            <div class="rsm-mod-rows">
+              <div class="rsm-mod-row"><span>Conversión</span><strong style="color:var(--amber)">67%</strong></div>
+              <div class="rsm-mod-row"><span>Ganados ytd</span><strong>41.300€</strong></div>
+              <div class="rsm-mod-row"><span>Vence esta sem.</span><strong style="color:var(--red)">1</strong></div>
+            </div>
+            <div class="rsm-stat-bars">
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Ganados</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:67%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">67%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Negociando</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:22%;background:var(--amber)"></div></div>
+                <span class="rsm-stat-val">22%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Perdidos</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:11%;background:var(--red)"></div></div>
+                <span class="rsm-stat-val">11%</span>
+              </div>
+            </div>
+            <div class="rsm-ai-tip">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Altafit (8.200€) vence el miércoles. Un seguimiento hoy puede cerrar el mejor mes.
+            </div>
+          </div>
+
+          <!-- Equipo -->
+          <div class="rsm-mod-card rsm-card-amber">
+            <div class="rsm-mod-header">
+              <div class="rsm-mod-name">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                Equipo
+              </div>
+              <span class="rsm-mod-badge rsm-badge-amber">1 alerta</span>
+            </div>
+            <div class="rsm-mod-main">79 <span>/100 score</span></div>
+            <div class="rsm-mod-rows">
+              <div class="rsm-mod-row"><span>Activos</span><strong>4</strong></div>
+              <div class="rsm-mod-row"><span>Sobrecargados</span><strong style="color:var(--red)">1</strong></div>
+              <div class="rsm-mod-row"><span>Horas asignadas</span><strong>73h</strong></div>
+            </div>
+            <div class="rsm-stat-bars">
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Eduardo</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:100%;background:var(--red)"></div></div>
+                <span class="rsm-stat-val" style="color:var(--red)">118%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Ana</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:82%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">82%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Carlos</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:71%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">71%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Miguel</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:55%;background:var(--text-tertiary)"></div></div>
+                <span class="rsm-stat-val">55%</span>
+              </div>
+            </div>
+            <div class="rsm-ai-tip">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Eduardo al 118% — redistribuir antes del martes reduce riesgo de calidad.
+            </div>
+          </div>
+
+          <!-- Objetivos -->
+          <div class="rsm-mod-card rsm-card-red">
+            <div class="rsm-mod-header">
+              <div class="rsm-mod-name">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                Objetivos
+              </div>
+              <span class="rsm-mod-badge rsm-badge-red">Revisar</span>
+            </div>
+            <div class="rsm-mod-main">3/5 <span>OKRs verde</span></div>
+            <div class="rsm-mod-rows">
+              <div class="rsm-mod-row"><span>En riesgo</span><strong style="color:var(--amber)">1</strong></div>
+              <div class="rsm-mod-row"><span>Crítico</span><strong style="color:var(--red)">1</strong></div>
+              <div class="rsm-mod-row"><span>Q1 completado</span><strong>65%</strong></div>
+            </div>
+            <div class="rsm-stat-bars">
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">MRR 15K€</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:83%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">83%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Margen 42%</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:68%;background:var(--amber)"></div></div>
+                <span class="rsm-stat-val">68%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Satisfac. 90</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:88%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">88%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">+5 clientes</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:40%;background:var(--red)"></div></div>
+                <span class="rsm-stat-val">40%</span>
+              </div>
+              <div class="rsm-stat-row">
+                <span class="rsm-stat-lbl">Retención</span>
+                <div class="rsm-stat-bar-wrap"><div class="rsm-stat-bar" style="width:92%;background:var(--green)"></div></div>
+                <span class="rsm-stat-val">92%</span>
+              </div>
+            </div>
+            <div class="rsm-ai-tip">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Margen Q1 al 68% del objetivo. Acción en abril necesaria para no comprometer el anual.
+            </div>
+          </div>
+
+        </div><!-- /rsm-modules -->
 
         <!-- Feed + Eventos -->
         <div class="resumen-bottom">
