@@ -2685,32 +2685,32 @@
     });
   }
 
+  // ── Alertas IA: toast notifications ──────────────────────
+  function sendAlertMsg(type, context) {
+    const labels = {
+      equipo:      { icon:'👥', prefix:'Mensaje enviado al equipo' },
+      responsable: { icon:'👤', prefix:'Mensaje enviado a' },
+      cliente:     { icon:'💬', prefix:'Mensaje enviado al cliente' },
+      clientes:    { icon:'💬', prefix:'Mensajes enviados a' },
+      dirección:   { icon:'📋', prefix:'Nota enviada a dirección' },
+      leads:       { icon:'🎯', prefix:'Activación enviada a' },
+      comercial:   { icon:'📊', prefix:'Alerta enviada a' },
+    };
+    const l = labels[type] || { icon:'✉️', prefix:'Mensaje enviado' };
+    const msg = `${l.prefix}${type==='responsable'||type==='leads'||type==='comercial' ? ' — ' + context : (type==='clientes'?' — '+context : '')}`;
+    const container = document.getElementById('alert-toast-container');
+    const item = document.createElement('div');
+    item.className = 'alert-toast-item';
+    item.innerHTML = `<div class="alert-toast-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>${l.icon} ${msg}</span>`;
+    container.appendChild(item);
+    setTimeout(() => {
+      item.classList.add('toast-out');
+      setTimeout(() => item.remove(), 220);
+    }, 2800);
+  }
+
   // IA Status module
   const IA_MODULES = [
-    // ── Alertas IA: toast notifications ────────────────────
-    function sendAlertMsg(type, context) {
-      const labels = {
-        equipo:       { icon:'👥', prefix:'Mensaje enviado al equipo' },
-        responsable:  { icon:'👤', prefix:'Mensaje enviado a' },
-        cliente:      { icon:'💬', prefix:'Mensaje enviado al cliente' },
-        clientes:     { icon:'💬', prefix:'Mensajes enviados a' },
-        dirección:    { icon:'📋', prefix:'Nota enviada a dirección' },
-        leads:        { icon:'🎯', prefix:'Activación enviada a' },
-        comercial:    { icon:'📊', prefix:'Alerta enviada a' },
-      };
-      const l = labels[type] || { icon:'✉️', prefix:'Mensaje enviado' };
-      const msg = `${l.prefix}${type==='responsable'||type==='leads'||type==='comercial' ? ' — ' + context : (type==='clientes'?' — '+context : '')}`;
-      const container = document.getElementById('alert-toast-container');
-      const item = document.createElement('div');
-      item.className = 'alert-toast-item';
-      item.innerHTML = `<div class="alert-toast-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>${l.icon} ${msg}</span>`;
-      container.appendChild(item);
-      setTimeout(() => {
-        item.classList.add('toast-out');
-        setTimeout(() => item.remove(), 220);
-      }, 2800);
-    }
-
     {name:'Resumen',      level:'amber', text:'Score empresa en descenso (74/100). Tendencia bajista — revisar objetivos Q2.'},
     {name:'Presupuestos', level:'amber', text:'28.760€ en pipeline activo. 3 presupuestos llevan +10 días sin respuesta.'},
     {name:'Proyectos',    level:'amber', text:'Portal Bellvitge bloqueado al 45%. Web Simyo vence mañana — prioridad alta.'},
