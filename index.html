@@ -869,10 +869,13 @@
     .alert-pri-badge.med  { background:var(--blue-bg);  color:var(--blue);  border:1px solid var(--blue-border); }
 
     .alert-table     { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; overflow:hidden; }
-    .alert-thead     { display:grid; grid-template-columns:1fr 1fr 216px; padding:8px 16px 8px 22px; background:var(--bg-elevated); border-bottom:1px solid var(--border); }
+    .alert-thead     { display:grid; grid-template-columns:1fr 1fr 216px 38px; padding:8px 16px 8px 22px; background:var(--bg-elevated); border-bottom:1px solid var(--border); }
     .alert-thead span{ font-size:10px; font-weight:600; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.07em; }
 
-    .alert-row       { display:grid; grid-template-columns:1fr 1fr 216px; border-bottom:1px solid var(--border); position:relative; transition:background .12s; opacity:0; animation:alertRowIn .28s ease forwards; }
+    .alert-row       { display:grid; grid-template-columns:1fr 1fr 216px 38px; border-bottom:1px solid var(--border); position:relative; transition:background .12s, opacity .2s ease; opacity:0; animation:alertRowIn .28s ease forwards; }
+    .alert-cell-dismiss { display:flex; align-items:center; justify-content:center; }
+    .alrt-dismiss    { width:26px; height:26px; border-radius:5px; border:1px solid transparent; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; color:var(--text-tertiary); transition:all .12s; flex-shrink:0; }
+    .alrt-dismiss:hover { background:var(--red-bg); border-color:var(--red-border); color:var(--red); }
     .alert-row:last-child { border-bottom:none; }
     .alert-row:hover { background:var(--bg-elevated); }
     .alert-row::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; }
@@ -2250,6 +2253,7 @@
               <span>Alerta · Área · Responsable</span>
               <span>Cómo resolverlo</span>
               <span>Acción rápida</span>
+              <span></span>
             </div>
 
             <!-- Alerta 1 -->
@@ -2283,6 +2287,11 @@
                 <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('cliente','Clínica Bellvitge')">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                   Msg. al cliente
+                </button>
+              </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
               </div>
             </div>
@@ -2320,6 +2329,11 @@
                   Msg. al cliente
                 </button>
               </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2339,6 +2353,7 @@
               <span>Alerta · Área · Responsable</span>
               <span>Cómo resolverlo</span>
               <span>Acción rápida</span>
+              <span></span>
             </div>
 
             <!-- Alerta 3 -->
@@ -2372,6 +2387,11 @@
                 <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('clientes','Bellvitge · Mares · Ferrer')">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                   Msg. a clientes
+                </button>
+              </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
               </div>
             </div>
@@ -2409,6 +2429,11 @@
                   Nota interna
                 </button>
               </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
             </div>
 
             <!-- Alerta 5 -->
@@ -2444,6 +2469,11 @@
                   Msg. al cliente
                 </button>
               </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -2463,6 +2493,7 @@
               <span>Alerta · Área · Responsable</span>
               <span>Cómo resolverlo</span>
               <span>Acción rápida</span>
+              <span></span>
             </div>
 
             <!-- Alerta 6 -->
@@ -2498,6 +2529,11 @@
                   Resumen IA
                 </button>
               </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
             </div>
 
             <!-- Alerta 7 -->
@@ -2531,6 +2567,11 @@
                 <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('leads','CRM · leads activos')">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
                   Activar leads
+                </button>
+              </div>
+              <div class="alert-cell-dismiss">
+                <button class="alrt-dismiss" onclick="dismissAlert(this)" title="Descartar alerta">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
                 </button>
               </div>
             </div>
@@ -2683,6 +2724,22 @@
         }
       }
     });
+  }
+
+  // ── Alertas IA: descartar alerta ─────────────────────────
+  function dismissAlert(btn) {
+    const row = btn.closest('.alert-row');
+    row.style.opacity = '0';
+    setTimeout(() => {
+      row.style.display = 'none';
+      const group = row.closest('.alert-group');
+      const visible = group.querySelectorAll('.alert-row:not([style*="display: none"])');
+      if (visible.length === 0) {
+        group.style.transition = 'opacity .2s ease';
+        group.style.opacity = '0';
+        setTimeout(() => group.style.display = 'none', 200);
+      }
+    }, 200);
   }
 
   // ── Alertas IA: toast notifications ──────────────────────
