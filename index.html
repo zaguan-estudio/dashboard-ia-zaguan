@@ -2530,13 +2530,167 @@
             </p>
           </div>
 
-          <!-- COL 2 y 3: próximas fases -->
-          <div style="flex:1;display:flex;align-items:center;justify-content:center;">
+          <!-- COL 2: Lista -->
+          <div class="obj-list-pane">
+
+            <!-- Header -->
+            <div class="obj-list-header">
+              <span class="obj-list-header-title" id="obj-list-title">Visión</span>
+              <div class="obj-list-header-actions">
+                <button class="obj-icon-btn" title="Buscar">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Lista: Visión (áreas estratégicas) -->
+            <div id="obj-list-vision">
+              <div class="obj-group-label">Áreas activas <span>5</span></div>
+
+              <div class="obj-list-item active" data-item="vision-global" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:#faf5ff;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Global</div>
+                  <div class="obj-item-sub">Visión general de empresa</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activa</span>
+              </div>
+
+              <div class="obj-list-item" data-item="vision-financiero" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--green-bg);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Financiero</div>
+                  <div class="obj-item-sub">Facturación y márgenes</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activa</span>
+              </div>
+
+              <div class="obj-list-item" data-item="vision-presupuestos" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--amber-bg);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Presupuestos</div>
+                  <div class="obj-item-sub">Conversión y tiempos</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activa</span>
+              </div>
+
+              <div class="obj-list-item" data-item="vision-proyectos" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--blue-bg);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Proyectos</div>
+                  <div class="obj-item-sub">Entregas y calidad</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activa</span>
+              </div>
+
+              <div class="obj-list-item" data-item="vision-equipo" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--red-bg);">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Equipo</div>
+                  <div class="obj-item-sub">Carga y desarrollo</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activa</span>
+              </div>
+            </div><!-- /obj-list-vision -->
+
+            <!-- Lista: Conectores -->
+            <div id="obj-list-conectores" style="display:none;">
+              <div class="obj-group-label">Conectados <span>3</span></div>
+
+              <div class="obj-list-item" data-item="conn-asana" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:#fdf2f8;">
+                  <!-- Asana logo: 3 círculos -->
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <circle cx="12" cy="6" r="4" fill="#f06a97"/>
+                    <circle cx="5"  cy="17" r="4" fill="#f06a97"/>
+                    <circle cx="19" cy="17" r="4" fill="#f06a97"/>
+                  </svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Asana</div>
+                  <div class="obj-item-sub">Proyectos · Equipo</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activo</span>
+              </div>
+
+              <div class="obj-list-item" data-item="conn-holded" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:#eff6ff;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#2563eb"/>
+                    <text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="white">H</text>
+                  </svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Holded</div>
+                  <div class="obj-item-sub">Finanzas · Facturas</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activo</span>
+              </div>
+
+              <div class="obj-list-item" data-item="conn-airtable" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:#fff7ed;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#f59e0b"/>
+                    <text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="white">A</text>
+                  </svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name">Airtable</div>
+                  <div class="obj-item-sub">Clientes · Pipeline</div>
+                </div>
+                <span class="obj-badge obj-badge-on">Activo</span>
+              </div>
+
+              <div class="obj-group-label" style="margin-top:6px;">No conectados <span>2</span></div>
+
+              <div class="obj-list-item" data-item="conn-slack" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--bg-elevated);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#e2e0d9"/>
+                    <text x="6" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="#9b9b8f">#</text>
+                  </svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name" style="color:var(--text-tertiary);">Slack</div>
+                  <div class="obj-item-sub">Comunicaciones · Alertas</div>
+                </div>
+                <span class="obj-badge obj-badge-off">Inactivo</span>
+              </div>
+
+              <div class="obj-list-item" data-item="conn-gmail" onclick="objSelectItem(this)">
+                <div class="obj-item-icon" style="background:var(--bg-elevated);">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <rect width="24" height="24" rx="5" fill="#e2e0d9"/>
+                    <text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="#9b9b8f">M</text>
+                  </svg>
+                </div>
+                <div class="obj-item-text">
+                  <div class="obj-item-name" style="color:var(--text-tertiary);">Gmail</div>
+                  <div class="obj-item-sub">Clientes · Aprobaciones</div>
+                </div>
+                <span class="obj-badge obj-badge-off">Inactivo</span>
+              </div>
+            </div><!-- /obj-list-conectores -->
+
+          </div><!-- /obj-list-pane -->
+
+          <!-- COL 3: próxima fase -->
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);">
             <div style="text-align:center;color:var(--text-tertiary);">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:.3;margin-bottom:10px;">
-                <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:.25;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;">
+                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M7 17v-4a2 2 0 0 1 2-2h3"/>
               </svg>
-              <p style="font-size:12px;">En desarrollo…</p>
+              <p style="font-size:11.5px;">Selecciona un elemento</p>
             </div>
           </div>
 
@@ -3023,6 +3177,13 @@
   function objSwitchTab(el) {
     document.querySelectorAll('.obj-tab').forEach(t => t.classList.remove('active'));
     el.classList.add('active');
+    const tab = el.dataset.tab;
+    document.getElementById('obj-list-vision').style.display     = tab === 'vision'     ? '' : 'none';
+    document.getElementById('obj-list-conectores').style.display = tab === 'conectores' ? '' : 'none';
+    document.getElementById('obj-list-title').textContent = tab === 'vision' ? 'Visión' : 'Conectores';
+    // Selecciona el primer item de la nueva lista
+    const first = document.querySelector('#obj-list-' + tab + ' .obj-list-item');
+    if (first) objSelectItem(first);
   }
   function objSelectItem(el) {
     const pane = el.closest('.obj-list-pane-inner') || el.parentElement;
