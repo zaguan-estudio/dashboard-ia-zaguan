@@ -2684,15 +2684,320 @@
 
           </div><!-- /obj-list-pane -->
 
-          <!-- COL 3: próxima fase -->
-          <div style="flex:1;display:flex;align-items:center;justify-content:center;border-left:1px solid var(--border);">
-            <div style="text-align:center;color:var(--text-tertiary);">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:.25;margin-bottom:8px;display:block;margin-left:auto;margin-right:auto;">
-                <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M7 17v-4a2 2 0 0 1 2-2h3"/>
-              </svg>
-              <p style="font-size:11.5px;">Selecciona un elemento</p>
+          <!-- COL 3: Panel de detalle -->
+          <div class="obj-detail-pane">
+
+            <!-- ══ VISIÓN: Global ══ -->
+            <div id="obj-detail-vision-global" class="obj-detail-panel active">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <div class="obj-item-icon" style="background:#faf5ff;width:28px;height:28px;border-radius:6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                  </div>
+                  Global
+                </div>
+                <div class="obj-detail-actions">
+                  <label class="obj-toggle"><input type="checkbox" checked><span class="obj-toggle-track"></span></label>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-detail-meta">
+                  <div class="obj-meta-item"><label>Área</label><span>Empresa global</span></div>
+                  <div class="obj-meta-item"><label>Estado</label><span style="color:var(--green);display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span>Activa</span></div>
+                  <div class="obj-meta-item"><label>Actualizada</label><span>Hoy</span></div>
+                </div>
+                <div class="obj-section-label">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Visión estratégica
+                </div>
+                <p class="obj-section-hint">Expresa en texto libre los objetivos estratégicos globales de la empresa. El sistema usará este texto como guía para orientar cada módulo del panel.</p>
+                <textarea class="obj-textarea">En 2025, Zaguan debe consolidarse como estudio de referencia en diseño digital y tecnología para el sector salud y lifestyle en España. Buscamos crecer un 30% en facturación, fortalecer la estructura del equipo y mejorar los márgenes del proyecto tipo un 15%. El foco está en calidad, no en volumen: menos proyectos, más estratégicos y mejor ejecutados.</textarea>
+                <div class="obj-save-row"><button class="obj-save-btn" onclick="objSaveVision('Global')">Guardar visión</button></div>
+              </div>
             </div>
-          </div>
+
+            <!-- ══ VISIÓN: Financiero ══ -->
+            <div id="obj-detail-vision-financiero" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <div class="obj-item-icon" style="background:var(--green-bg);width:28px;height:28px;border-radius:6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  </div>
+                  Financiero
+                </div>
+                <div class="obj-detail-actions">
+                  <label class="obj-toggle"><input type="checkbox" checked><span class="obj-toggle-track"></span></label>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-detail-meta">
+                  <div class="obj-meta-item"><label>Área</label><span>Finanzas</span></div>
+                  <div class="obj-meta-item"><label>Estado</label><span style="color:var(--green);display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span>Activa</span></div>
+                  <div class="obj-meta-item"><label>Actualizada</label><span>Hace 2 días</span></div>
+                </div>
+                <div class="obj-section-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Visión estratégica</div>
+                <p class="obj-section-hint">Define los objetivos financieros del año. El panel usará esta guía para interpretar desviaciones y alertar sobre riesgos en la cuenta de resultados.</p>
+                <textarea class="obj-textarea">Cerrar el año con una facturación de 480.000€ y un margen neto del 22%. Priorizar la reducción de costes variables en proyectos de diseño y mantener el buffer de tesorería por encima de los 45.000€ en todo momento. El objetivo de Q2 es superar los 125.000€ facturados. Si en mayo no estamos al 40% del objetivo anual, revisamos la estrategia comercial.</textarea>
+                <div class="obj-save-row"><button class="obj-save-btn" onclick="objSaveVision('Financiero')">Guardar visión</button></div>
+              </div>
+            </div>
+
+            <!-- ══ VISIÓN: Presupuestos ══ -->
+            <div id="obj-detail-vision-presupuestos" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <div class="obj-item-icon" style="background:var(--amber-bg);width:28px;height:28px;border-radius:6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  </div>
+                  Presupuestos
+                </div>
+                <div class="obj-detail-actions">
+                  <label class="obj-toggle"><input type="checkbox" checked><span class="obj-toggle-track"></span></label>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-detail-meta">
+                  <div class="obj-meta-item"><label>Área</label><span>Comercial</span></div>
+                  <div class="obj-meta-item"><label>Estado</label><span style="color:var(--green);display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span>Activa</span></div>
+                  <div class="obj-meta-item"><label>Actualizada</label><span>Esta semana</span></div>
+                </div>
+                <div class="obj-section-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Visión estratégica</div>
+                <p class="obj-section-hint">Define cómo debe funcionar el proceso comercial. El sistema alertará cuando haya presupuestos sin respuesta o la tasa de conversión baje del objetivo.</p>
+                <textarea class="obj-textarea">Reducir el tiempo medio de aprobación de 12 a 7 días. Incrementar la tasa de conversión del 52% actual al 65% a finales de Q3. Mejorar los seguimientos: ningún presupuesto debe estar más de 5 días sin respuesta del cliente sin un contacto proactivo por nuestra parte. En proyectos estratégicos, buscar el cierre en menos de dos reuniones.</textarea>
+                <div class="obj-save-row"><button class="obj-save-btn" onclick="objSaveVision('Presupuestos')">Guardar visión</button></div>
+              </div>
+            </div>
+
+            <!-- ══ VISIÓN: Proyectos ══ -->
+            <div id="obj-detail-vision-proyectos" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <div class="obj-item-icon" style="background:var(--blue-bg);width:28px;height:28px;border-radius:6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  </div>
+                  Proyectos
+                </div>
+                <div class="obj-detail-actions">
+                  <label class="obj-toggle"><input type="checkbox" checked><span class="obj-toggle-track"></span></label>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-detail-meta">
+                  <div class="obj-meta-item"><label>Área</label><span>Producción</span></div>
+                  <div class="obj-meta-item"><label>Estado</label><span style="color:var(--green);display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span>Activa</span></div>
+                  <div class="obj-meta-item"><label>Actualizada</label><span>Esta semana</span></div>
+                </div>
+                <div class="obj-section-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Visión estratégica</div>
+                <p class="obj-section-hint">Define los estándares de entrega y calidad. El sistema cruzará esta guía con los datos de Asana para detectar proyectos en riesgo.</p>
+                <textarea class="obj-textarea">Entregar el 90% de proyectos a tiempo y sin incidencias. Implementar revisiones de estado semanales para proyectos de más de 4 semanas. El NPS de proyecto debe superar 8,5 de media anual. Cero proyectos bloqueados más de 2 semanas sin plan de acción documentado. Cuando un proyecto supere el 70% del tiempo y esté por debajo del 50% de avance, actuar de inmediato.</textarea>
+                <div class="obj-save-row"><button class="obj-save-btn" onclick="objSaveVision('Proyectos')">Guardar visión</button></div>
+              </div>
+            </div>
+
+            <!-- ══ VISIÓN: Equipo ══ -->
+            <div id="obj-detail-vision-equipo" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <div class="obj-item-icon" style="background:var(--red-bg);width:28px;height:28px;border-radius:6px;">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  </div>
+                  Equipo
+                </div>
+                <div class="obj-detail-actions">
+                  <label class="obj-toggle"><input type="checkbox" checked><span class="obj-toggle-track"></span></label>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-detail-meta">
+                  <div class="obj-meta-item"><label>Área</label><span>Personas</span></div>
+                  <div class="obj-meta-item"><label>Estado</label><span style="color:var(--green);display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;"></span>Activa</span></div>
+                  <div class="obj-meta-item"><label>Actualizada</label><span>Hace 3 días</span></div>
+                </div>
+                <div class="obj-section-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>Visión estratégica</div>
+                <p class="obj-section-hint">Define cómo debe funcionar y crecer el equipo. El sistema alertará cuando la carga supere los límites o un miembro esté en riesgo de saturación.</p>
+                <textarea class="obj-textarea">Mantener una carga de trabajo equilibrada: máximo 3 proyectos simultáneos activos por persona. Fomentar el desarrollo de habilidades con al menos una formación trimestral por miembro. El objetivo de satisfacción interna en Q2 debe superar el 8/10. Eduardo y Ariadna deben tener claramente definidos sus ámbitos de liderazgo antes de que empiece mayo.</textarea>
+                <div class="obj-save-row"><button class="obj-save-btn" onclick="objSaveVision('Equipo')">Guardar visión</button></div>
+              </div>
+            </div>
+
+            <!-- ══ CONECTOR: Asana ══ -->
+            <div id="obj-detail-conn-asana" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="6" r="4" fill="#f06a97"/><circle cx="5" cy="17" r="4" fill="#f06a97"/><circle cx="19" cy="17" r="4" fill="#f06a97"/></svg>
+                  Asana
+                </div>
+                <div class="obj-detail-actions">
+                  <button class="obj-conn-btn obj-conn-btn-off">Desconectar</button>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-conn-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  https://mcp.asana.com/sse
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-left:4px;" title="Conectado"></span>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:8px;">Datos que alimenta</div>
+                <p class="obj-section-hint">Datos en tiempo real que este conector proporciona al panel de dirección.</p>
+                <div class="obj-data-chips">
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--blue);"></span><span class="obj-chip-label">Proyectos activos</span><span class="obj-chip-module">Proyectos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--blue);"></span><span class="obj-chip-label">Estado de tareas</span><span class="obj-chip-module">Proyectos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--blue);"></span><span class="obj-chip-label">Fechas de entrega</span><span class="obj-chip-module">Proyectos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--red);"></span><span class="obj-chip-label">Carga por miembro</span><span class="obj-chip-module">Equipo</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--red);"></span><span class="obj-chip-label">Tareas por persona</span><span class="obj-chip-module">Equipo</span></div>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:4px;">Herramientas disponibles</div>
+                <div class="obj-tool-list">
+                  <div class="obj-tool-row">get_projects <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_tasks <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_team_users <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_project_status <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_allocations <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ CONECTOR: Holded ══ -->
+            <div id="obj-detail-conn-holded" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#2563eb"/><text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="white">H</text></svg>
+                  Holded
+                </div>
+                <div class="obj-detail-actions">
+                  <button class="obj-conn-btn obj-conn-btn-off">Desconectar</button>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-conn-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  https://api.holded.com/api
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-left:4px;"></span>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:8px;">Datos que alimenta</div>
+                <p class="obj-section-hint">Datos en tiempo real que este conector proporciona al panel de dirección.</p>
+                <div class="obj-data-chips">
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--green);"></span><span class="obj-chip-label">Facturación mensual</span><span class="obj-chip-module">Finanzas</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--green);"></span><span class="obj-chip-label">Cobros pendientes</span><span class="obj-chip-module">Finanzas</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--green);"></span><span class="obj-chip-label">Gastos operativos</span><span class="obj-chip-module">Finanzas</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--amber);"></span><span class="obj-chip-label">Presupuestos emitidos</span><span class="obj-chip-module">Presupuestos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--amber);"></span><span class="obj-chip-label">Estado de aprobación</span><span class="obj-chip-module">Presupuestos</span></div>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:4px;">Herramientas disponibles</div>
+                <div class="obj-tool-list">
+                  <div class="obj-tool-row">get_invoices <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_estimates <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_expenses <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_cashflow <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ CONECTOR: Airtable ══ -->
+            <div id="obj-detail-conn-airtable" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#f59e0b"/><text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="white">A</text></svg>
+                  Airtable
+                </div>
+                <div class="obj-detail-actions">
+                  <button class="obj-conn-btn obj-conn-btn-off">Desconectar</button>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-conn-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  https://api.airtable.com/v0
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--green);display:inline-block;margin-left:4px;"></span>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:8px;">Datos que alimenta</div>
+                <p class="obj-section-hint">Datos en tiempo real que este conector proporciona al panel de dirección.</p>
+                <div class="obj-data-chips">
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--amber);"></span><span class="obj-chip-label">Pipeline comercial</span><span class="obj-chip-module">Presupuestos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--amber);"></span><span class="obj-chip-label">Leads activos</span><span class="obj-chip-module">Presupuestos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--purple);"></span><span class="obj-chip-label">Base de clientes</span><span class="obj-chip-module">Resumen</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--purple);"></span><span class="obj-chip-label">Seguimiento comercial</span><span class="obj-chip-module">Resumen</span></div>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:4px;">Herramientas disponibles</div>
+                <div class="obj-tool-list">
+                  <div class="obj-tool-row">list_records <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">get_record <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                  <div class="obj-tool-row">search_records <div class="obj-tool-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ CONECTOR: Slack (no conectado) ══ -->
+            <div id="obj-detail-conn-slack" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#e2e0d9"/><text x="6" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="#9b9b8f">#</text></svg>
+                  <span style="color:var(--text-secondary);">Slack</span>
+                </div>
+                <div class="obj-detail-actions">
+                  <button class="obj-conn-btn obj-conn-btn-on">Conectar</button>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-conn-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  https://slack.com/api
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--border-strong);display:inline-block;margin-left:4px;" title="No conectado"></span>
+                </div>
+                <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-bottom:20px;">
+                  <div style="font-size:12.5px;font-weight:600;color:var(--text-primary);margin-bottom:4px;">Conector no activo</div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.55;">Conecta Slack para que el panel pueda leer comunicaciones de equipo y enviar alertas automáticas cuando se detecten situaciones críticas.</p>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:8px;">Datos que alimentaría</div>
+                <div class="obj-data-chips" style="opacity:.5;">
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Mensajes de equipo</span><span class="obj-chip-module">Equipo</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Alertas de proyecto</span><span class="obj-chip-module">Proyectos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Notificaciones</span><span class="obj-chip-module">Alertas</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- ══ CONECTOR: Gmail (no conectado) ══ -->
+            <div id="obj-detail-conn-gmail" class="obj-detail-panel">
+              <div class="obj-detail-header">
+                <div class="obj-detail-name">
+                  <svg width="22" height="22" viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#e2e0d9"/><text x="5" y="17" font-family="sans-serif" font-weight="700" font-size="13" fill="#9b9b8f">M</text></svg>
+                  <span style="color:var(--text-secondary);">Gmail</span>
+                </div>
+                <div class="obj-detail-actions">
+                  <button class="obj-conn-btn obj-conn-btn-on">Conectar</button>
+                  <button class="obj-more-btn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+              <div class="obj-detail-body">
+                <div class="obj-conn-url">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                  https://gmail.googleapis.com/gmail/v1
+                  <span style="width:7px;height:7px;border-radius:50%;background:var(--border-strong);display:inline-block;margin-left:4px;"></span>
+                </div>
+                <div style="background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:16px 18px;margin-bottom:20px;">
+                  <div style="font-size:12.5px;font-weight:600;color:var(--text-primary);margin-bottom:4px;">Conector no activo</div>
+                  <p style="font-size:12px;color:var(--text-secondary);line-height:1.55;">Conecta Gmail para detectar aprobaciones de presupuesto, respuestas de clientes y comunicaciones relevantes para el estado del negocio.</p>
+                </div>
+                <div class="obj-section-label" style="margin-bottom:8px;">Datos que alimentaría</div>
+                <div class="obj-data-chips" style="opacity:.5;">
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Respuestas de clientes</span><span class="obj-chip-module">Presupuestos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Aprobaciones</span><span class="obj-chip-module">Presupuestos</span></div>
+                  <div class="obj-data-chip"><span class="obj-chip-dot" style="background:var(--text-tertiary);"></span><span class="obj-chip-label">Comunicaciones clave</span><span class="obj-chip-module">Resumen</span></div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /obj-detail-pane -->
 
         </div>
       </section>
