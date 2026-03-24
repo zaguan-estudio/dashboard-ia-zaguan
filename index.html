@@ -851,6 +851,72 @@
     .fin-ss-note { font-size:10px; color:var(--text-tertiary); margin-top:5px; }
     .fin-ss-bar-wrap { margin-top:6px; height:3px; background:var(--border); border-radius:2px; overflow:hidden; }
     .fin-ss-bar { height:3px; border-radius:2px; }
+
+    /* ─── ALERTAS IA ─────────────────────────────────────── */
+    .alert-kpi-strip { display:flex; gap:10px; margin-bottom:20px; }
+    .alert-kpi-pill  { flex:1; background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; padding:14px 18px; display:flex; align-items:center; gap:12px; }
+    .alert-kpi-dot   { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+    .alert-kpi-val   { font-size:24px; font-weight:600; font-family:'DM Mono',monospace; letter-spacing:-.5px; line-height:1; }
+    .alert-kpi-lbl   { font-size:11px; color:var(--text-tertiary); margin-top:3px; }
+
+    .alert-group     { margin-bottom:16px; }
+    .alert-group-hd  { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+    .alert-group-line{ flex:1; height:1px; background:var(--border); }
+    .alert-group-count { font-size:11.5px; color:var(--text-tertiary); white-space:nowrap; }
+    .alert-pri-badge { font-size:10px; font-weight:700; letter-spacing:.07em; padding:3px 9px; border-radius:5px; text-transform:uppercase; white-space:nowrap; }
+    .alert-pri-badge.crit { background:var(--red-bg);   color:var(--red);   border:1px solid var(--red-border); }
+    .alert-pri-badge.high { background:var(--amber-bg); color:var(--amber); border:1px solid var(--amber-border); }
+    .alert-pri-badge.med  { background:var(--blue-bg);  color:var(--blue);  border:1px solid var(--blue-border); }
+
+    .alert-table     { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; overflow:hidden; }
+    .alert-thead     { display:grid; grid-template-columns:1fr 1fr 216px; padding:8px 16px 8px 22px; background:var(--bg-elevated); border-bottom:1px solid var(--border); }
+    .alert-thead span{ font-size:10px; font-weight:600; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.07em; }
+
+    .alert-row       { display:grid; grid-template-columns:1fr 1fr 216px; border-bottom:1px solid var(--border); position:relative; transition:background .12s; opacity:0; animation:alertRowIn .28s ease forwards; }
+    .alert-row:last-child { border-bottom:none; }
+    .alert-row:hover { background:var(--bg-elevated); }
+    .alert-row::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; }
+    .alert-row.crit::before { background:var(--red); }
+    .alert-row.high::before { background:var(--amber); }
+    .alert-row.med::before  { background:var(--blue); }
+    @keyframes alertRowIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+
+    .alert-cell       { padding:13px 14px 13px 22px; }
+    .alert-cell-how   { padding:13px 14px; display:flex; gap:8px; align-items:flex-start; }
+    .alert-cell-acts  { padding:11px 14px; display:flex; flex-direction:column; gap:5px; justify-content:center; }
+
+    .alert-tags  { display:flex; align-items:center; gap:6px; margin-bottom:6px; flex-wrap:wrap; }
+    .alert-area  { font-size:9.5px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:2px 7px; border-radius:4px; }
+    .alert-area.proyectos    { background:var(--purple-bg); color:var(--purple); border:1px solid var(--purple-border); }
+    .alert-area.presupuestos { background:var(--amber-bg);  color:var(--amber);  border:1px solid var(--amber-border); }
+    .alert-area.equipo       { background:var(--blue-bg);   color:var(--blue);   border:1px solid var(--blue-border); }
+    .alert-area.estrategia   { background:var(--bg-elevated); color:var(--text-secondary); border:1px solid var(--border); }
+    .alert-area.pipeline     { background:var(--green-bg);  color:var(--green);  border:1px solid var(--green-border); }
+    .alert-resp  { font-size:10.5px; color:var(--text-tertiary); display:flex; align-items:center; gap:3px; }
+    .alert-title { font-size:13px; font-weight:600; color:var(--text-primary); margin-bottom:3px; line-height:1.3; }
+    .alert-desc  { font-size:11.5px; color:var(--text-secondary); line-height:1.5; }
+
+    .how-icon    { width:24px; height:24px; border-radius:5px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+    .how-icon.crit { background:var(--red-bg);   border:1px solid var(--red-border); }
+    .how-icon.high { background:var(--amber-bg); border:1px solid var(--amber-border); }
+    .how-icon.med  { background:var(--blue-bg);  border:1px solid var(--blue-border); }
+    .how-text    { font-size:11.5px; color:var(--text-secondary); line-height:1.55; }
+
+    .alrt-btn      { display:flex; align-items:center; gap:5px; padding:5px 10px; border-radius:6px; font-size:10.5px; font-family:'DM Sans',sans-serif; font-weight:500; cursor:pointer; border:1px solid; transition:all .12s; white-space:nowrap; width:100%; }
+    .alrt-btn-team { background:var(--blue-bg);     color:var(--blue);   border-color:var(--blue-border); }
+    .alrt-btn-team:hover { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .alrt-btn-resp { background:var(--bg-elevated); color:var(--text-secondary); border-color:var(--border); }
+    .alrt-btn-resp:hover { background:var(--text-primary); color:#fff; border-color:var(--text-primary); }
+    .alrt-btn-msg  { background:var(--purple-bg);   color:var(--purple); border-color:var(--purple-border); }
+    .alrt-btn-msg:hover { background:var(--purple); color:#fff; border-color:var(--purple); }
+
+    /* toast notifications */
+    #alert-toast-container { position:fixed; bottom:24px; right:24px; z-index:9999; display:flex; flex-direction:column; gap:8px; pointer-events:none; }
+    .alert-toast-item { background:var(--text-primary); color:#fff; font-family:'DM Sans',sans-serif; font-size:12px; padding:11px 16px; border-radius:8px; display:flex; align-items:center; gap:9px; max-width:300px; box-shadow:0 4px 20px rgba(0,0,0,.22); animation:toastIn .2s ease both; }
+    .alert-toast-item.toast-out { animation:toastOut .2s ease both; }
+    .alert-toast-check { width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,.18); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    @keyframes toastIn  { from { opacity:0; transform:translateX(12px); } to { opacity:1; transform:translateX(0); } }
+    @keyframes toastOut { from { opacity:1; transform:translateX(0);    } to { opacity:0; transform:translateX(12px); } }
   </style>
 </head>
 <body>
@@ -2114,14 +2180,363 @@
 
       <!-- SECCIÓN 8: Alertas IA -->
       <section id="section-alertas" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
-            <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
-          </svg>
-          <p>Alertas Inteligentes</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <!-- IA Banner Alertas -->
+        <div class="ai-banner">
+          <div class="ai-banner-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div class="ai-banner-sup">Zaguán IA · Centro de alertas</div>
+            <div class="ai-banner-title">7 situaciones activas — 2 críticas necesitan decisión hoy antes de las 14h</div>
+            <p class="ai-banner-text">He detectado y priorizado los problemas que más impacto tienen en tu negocio en este momento. <strong>Dos son urgentes:</strong> Bellvitge lleva 3 semanas bloqueado sin que nadie haya escalado el problema, y Simyo tiene entrega comprometida para hoy sin confirmación del equipo. En presupuestos, hay <strong>11.560€ en riesgo</strong> de fuga silenciosa si no hay seguimiento activo en las próximas 48 horas. Para cada alerta te ofrezco un consejo concreto y puedes lanzar la notificación directamente desde aquí.</p>
+          </div>
+          <div class="ai-banner-aside">
+            <div class="ai-banner-date">Lun 23 mar</div>
+            <button class="ai-refresh-btn">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              Escanear de nuevo
+            </button>
+          </div>
         </div>
+
+        <!-- KPI strip -->
+        <div class="alert-kpi-strip">
+          <div class="alert-kpi-pill">
+            <div class="alert-kpi-dot" style="background:var(--red);box-shadow:0 0 0 3px var(--red-bg);"></div>
+            <div>
+              <div class="alert-kpi-val" style="color:var(--red);">2</div>
+              <div class="alert-kpi-lbl">Críticas · acción inmediata</div>
+            </div>
+          </div>
+          <div class="alert-kpi-pill">
+            <div class="alert-kpi-dot" style="background:var(--amber);box-shadow:0 0 0 3px var(--amber-bg);"></div>
+            <div>
+              <div class="alert-kpi-val" style="color:var(--amber);">3</div>
+              <div class="alert-kpi-lbl">Alta prioridad · esta semana</div>
+            </div>
+          </div>
+          <div class="alert-kpi-pill">
+            <div class="alert-kpi-dot" style="background:var(--blue);box-shadow:0 0 0 3px var(--blue-bg);"></div>
+            <div>
+              <div class="alert-kpi-val" style="color:var(--blue);">2</div>
+              <div class="alert-kpi-lbl">Media prioridad · próximos días</div>
+            </div>
+          </div>
+          <div class="alert-kpi-pill">
+            <div class="alert-kpi-dot" style="background:var(--green);box-shadow:0 0 0 3px var(--green-bg);"></div>
+            <div>
+              <div class="alert-kpi-val" style="color:var(--green);">0</div>
+              <div class="alert-kpi-lbl">Resueltas hoy</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GRUPO CRÍTICO ── -->
+        <div class="alert-group">
+          <div class="alert-group-hd">
+            <span class="alert-pri-badge crit">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:middle;margin-right:3px;"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Crítico
+            </span>
+            <span class="alert-group-count">2 alertas · requieren decisión hoy</span>
+            <div class="alert-group-line"></div>
+          </div>
+          <div class="alert-table">
+            <div class="alert-thead">
+              <span>Alerta · Área · Responsable</span>
+              <span>Cómo resolverlo</span>
+              <span>Acción rápida</span>
+            </div>
+
+            <!-- Alerta 1 -->
+            <div class="alert-row crit" style="animation-delay:.05s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area proyectos">Proyectos</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Ariadna
+                  </span>
+                </div>
+                <div class="alert-title">Portal Clínica Bellvitge bloqueado al 45%</div>
+                <div class="alert-desc">Tres semanas sin avance registrado. El cliente ha preguntado dos veces esta semana y no hay respuesta de estado.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon crit">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="how-text">Convocar reunión urgente hoy con Ariadna. Identificar el bloqueador técnico exacto. Si no hay resolución antes del viernes, reasignar un recurso adicional y comunicar nueva fecha al cliente hoy mismo.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Portal Bellvitge')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','Ariadna')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. a Ariadna
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('cliente','Clínica Bellvitge')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Msg. al cliente
+                </button>
+              </div>
+            </div>
+
+            <!-- Alerta 2 -->
+            <div class="alert-row crit" style="animation-delay:.1s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area proyectos">Proyectos</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Eduardo
+                  </span>
+                </div>
+                <div class="alert-title">Simyo · Web — entrega comprometida para HOY</div>
+                <div class="alert-desc">Sin confirmación de estado por parte del equipo. Si no se cierra hoy, el cliente perderá confianza en los plazos.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon crit">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--red)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                </div>
+                <div class="how-text">Contactar a Eduardo antes de las 12h y confirmar porcentaje de cierre real. Si no está al 100%, notificar al cliente con nueva fecha comprometida antes de que pregunte él primero.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Simyo entrega')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','Eduardo')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. a Eduardo
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('cliente','Simyo')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Msg. al cliente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GRUPO ALTA ── -->
+        <div class="alert-group">
+          <div class="alert-group-hd">
+            <span class="alert-pri-badge high">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:middle;margin-right:3px;"><polyline points="18 15 12 9 6 15"/></svg>
+              Alta prioridad
+            </span>
+            <span class="alert-group-count">3 alertas · resolver esta semana</span>
+            <div class="alert-group-line"></div>
+          </div>
+          <div class="alert-table">
+            <div class="alert-thead">
+              <span>Alerta · Área · Responsable</span>
+              <span>Cómo resolverlo</span>
+              <span>Acción rápida</span>
+            </div>
+
+            <!-- Alerta 3 -->
+            <div class="alert-row high" style="animation-delay:.15s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area presupuestos">Presupuestos</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    JG
+                  </span>
+                </div>
+                <div class="alert-title">3 presupuestos sin respuesta +10 días</div>
+                <div class="alert-desc">Bellvitge, Mares y Despacho Ferrer. Total en riesgo: 11.560€ que pueden perderse sin que el cliente haya dicho explícitamente que no.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon high">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="how-text">Llamada de seguimiento personalizada para cada uno hoy. No email — llamada. Ofrecer pequeña extensión de validez con incentivo de cierre rápido (descuento o inicio preferente).</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Seguimiento presupuestos')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','JG')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. a JG
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('clientes','Bellvitge · Mares · Ferrer')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Msg. a clientes
+                </button>
+              </div>
+            </div>
+
+            <!-- Alerta 4 -->
+            <div class="alert-row high" style="animation-delay:.2s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area equipo">Equipo</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Dirección
+                  </span>
+                </div>
+                <div class="alert-title">Eduardo al límite de capacidad</div>
+                <div class="alert-desc">3 proyectos activos en paralelo. Altafit arranca la semana próxima — sin redistribución, riesgo de efecto cascada en abril.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon high">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="how-text">Redistribuir Altafit a un segundo recurso disponible antes del martes. Actualizar la planificación de marzo y comunicar el cambio al equipo para evitar confusiones de responsabilidad.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Redistribución de carga')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','Eduardo')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. a Eduardo
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('dirección','Planificación')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Nota interna
+                </button>
+              </div>
+            </div>
+
+            <!-- Alerta 5 -->
+            <div class="alert-row high" style="animation-delay:.25s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area presupuestos">Presupuestos</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    JG
+                  </span>
+                </div>
+                <div class="alert-title">Presupuesto Altafit vence el miércoles — 8.200€</div>
+                <div class="alert-desc">App móvil iOS/Android. 8 días en negociación sin señal de cierre inminente. Caducidad en 48 horas.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon high">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--amber)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="how-text">Enviar hoy versión revisada con resumen de valor claro (ROI esperado). Proponer reunión de 20 min antes del miércoles para resolver las objeciones pendientes antes de que caduque.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Altafit cierre')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','JG')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. a JG
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('cliente','Altafit')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Msg. al cliente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GRUPO MEDIA ── -->
+        <div class="alert-group">
+          <div class="alert-group-hd">
+            <span class="alert-pri-badge med">
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:inline-block;vertical-align:middle;margin-right:3px;"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+              Media prioridad
+            </span>
+            <span class="alert-group-count">2 alertas · abordar esta semana</span>
+            <div class="alert-group-line"></div>
+          </div>
+          <div class="alert-table">
+            <div class="alert-thead">
+              <span>Alerta · Área · Responsable</span>
+              <span>Cómo resolverlo</span>
+              <span>Acción rápida</span>
+            </div>
+
+            <!-- Alerta 6 -->
+            <div class="alert-row med" style="animation-delay:.3s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area estrategia">Estrategia</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Dirección
+                  </span>
+                </div>
+                <div class="alert-title">Score empresa en descenso — 74/100</div>
+                <div class="alert-desc">Tendencia bajista tres semanas consecutivas. Sin revisión formal de objetivos Q2 en el calendario.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon med">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="how-text">Incluir revisión de objetivos Q2 en la próxima reunión de dirección. Identificar el KPI con mayor impacto en el score (probablemente conversión o NPS) y definir una acción correctora.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Revisión score Q2')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','Dirección')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Nota dirección
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('dirección','Informe score')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Resumen IA
+                </button>
+              </div>
+            </div>
+
+            <!-- Alerta 7 -->
+            <div class="alert-row med" style="animation-delay:.35s">
+              <div class="alert-cell">
+                <div class="alert-tags">
+                  <span class="alert-area pipeline">Pipeline</span>
+                  <span class="alert-resp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    Comercial
+                  </span>
+                </div>
+                <div class="alert-title">Sin proyectos confirmados para inicio en mayo</div>
+                <div class="alert-desc">El pipeline de nuevos proyectos está vacío para mayo. Riesgo de hueco de facturación si no se activa esta semana.</div>
+              </div>
+              <div class="alert-cell-how">
+                <div class="how-icon med">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="how-text">Activar los 3 leads templados del CRM esta semana (Farmanova, Despacho López, Clínica Mares). Revisar propuestas abiertas y reactivar conversaciones con un nuevo ángulo de valor.</div>
+              </div>
+              <div class="alert-cell-acts">
+                <button class="alrt-btn alrt-btn-team" onclick="sendAlertMsg('equipo','Activación pipeline mayo')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  Msg. al equipo
+                </button>
+                <button class="alrt-btn alrt-btn-resp" onclick="sendAlertMsg('responsable','Comercial')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  Msg. comercial
+                </button>
+                <button class="alrt-btn alrt-btn-msg" onclick="sendAlertMsg('leads','CRM · leads activos')">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                  Activar leads
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div><!-- /content -->
@@ -2129,6 +2544,9 @@
   </main><!-- /main -->
 
 </div><!-- /app -->
+
+<!-- ═══ ALERT TOAST CONTAINER ═══ -->
+<div id="alert-toast-container"></div>
 
 <!-- ═══ FRIDAY REPORT MODAL ═══ -->
 <div id="ia-panel"></div>
@@ -2269,6 +2687,30 @@
 
   // IA Status module
   const IA_MODULES = [
+    // ── Alertas IA: toast notifications ────────────────────
+    function sendAlertMsg(type, context) {
+      const labels = {
+        equipo:       { icon:'👥', prefix:'Mensaje enviado al equipo' },
+        responsable:  { icon:'👤', prefix:'Mensaje enviado a' },
+        cliente:      { icon:'💬', prefix:'Mensaje enviado al cliente' },
+        clientes:     { icon:'💬', prefix:'Mensajes enviados a' },
+        dirección:    { icon:'📋', prefix:'Nota enviada a dirección' },
+        leads:        { icon:'🎯', prefix:'Activación enviada a' },
+        comercial:    { icon:'📊', prefix:'Alerta enviada a' },
+      };
+      const l = labels[type] || { icon:'✉️', prefix:'Mensaje enviado' };
+      const msg = `${l.prefix}${type==='responsable'||type==='leads'||type==='comercial' ? ' — ' + context : (type==='clientes'?' — '+context : '')}`;
+      const container = document.getElementById('alert-toast-container');
+      const item = document.createElement('div');
+      item.className = 'alert-toast-item';
+      item.innerHTML = `<div class="alert-toast-check"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></div><span>${l.icon} ${msg}</span>`;
+      container.appendChild(item);
+      setTimeout(() => {
+        item.classList.add('toast-out');
+        setTimeout(() => item.remove(), 220);
+      }, 2800);
+    }
+
     {name:'Resumen',      level:'amber', text:'Score empresa en descenso (74/100). Tendencia bajista — revisar objetivos Q2.'},
     {name:'Presupuestos', level:'amber', text:'28.760€ en pipeline activo. 3 presupuestos llevan +10 días sin respuesta.'},
     {name:'Proyectos',    level:'amber', text:'Portal Bellvitge bloqueado al 45%. Web Simyo vence mañana — prioridad alta.'},
