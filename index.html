@@ -749,6 +749,37 @@
     .eq-footer { padding:10px 16px; display:flex; align-items:center; justify-content:space-between; }
     .eq-hitos-lbl { font-size:11px; color:var(--text-tertiary); }
     .eq-hitos-lbl strong { color:var(--text-primary); font-family:'DM Mono',monospace; font-style:normal; }
+
+    /* ─── FINANZAS ──────────────────────────────────────── */
+    .fin-top { display:grid; grid-template-columns:152px 1fr 1fr 1fr 1fr; gap:12px; margin-bottom:16px; align-items:stretch; }
+    .fin-score-card { background:var(--bg-elevated); border:1px solid var(--border); border-radius:9px; padding:16px 14px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px; }
+    .fin-score-ring { width:82px; height:82px; border-radius:50%; padding:7px; background:conic-gradient(var(--green) 0% 78%, var(--border) 78% 100%); flex-shrink:0; }
+    .fin-score-inner { width:100%; height:100%; border-radius:50%; background:var(--bg-elevated); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; }
+    .fin-score-num { font-size:21px; font-weight:700; font-family:'DM Mono',monospace; color:var(--green); line-height:1.1; }
+    .fin-score-max { font-size:9px; color:var(--text-tertiary); }
+    .fin-score-name { font-size:10px; font-weight:600; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.07em; text-align:center; }
+    .fin-score-badge { font-size:9.5px; font-weight:700; padding:2px 9px; border-radius:10px; background:var(--green-bg); color:var(--green); letter-spacing:.05em; border:1px solid var(--green-border); }
+    .fin-kpi-card { background:var(--bg-surface); border:1px solid var(--border); border-radius:9px; padding:16px 18px; }
+    .fin-kpi-lbl { font-size:10.5px; font-weight:500; color:var(--text-tertiary); text-transform:uppercase; letter-spacing:.06em; margin-bottom:8px; }
+    .fin-kpi-val { font-size:26px; font-weight:600; font-family:'DM Mono',monospace; color:var(--text-primary); letter-spacing:-.5px; line-height:1; }
+    .fin-kpi-sub { font-size:11px; color:var(--text-secondary); margin-top:5px; }
+    .fin-kpi-delta { font-size:11px; font-weight:500; margin-top:3px; }
+    .fin-panels { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .fin-prog-val { font-size:11.5px; font-family:'DM Mono',monospace; color:var(--text-primary); font-weight:600; width:56px; text-align:right; flex-shrink:0; }
+    .fin-trend-bars { display:flex; align-items:flex-end; gap:6px; margin-top:6px; }
+    .fin-bar-col { display:flex; flex-direction:column; align-items:center; gap:3px; flex:1; }
+    .fin-bar { width:100%; border-radius:3px 3px 0 0; min-height:4px; background:var(--blue); }
+    .fin-bar-lbl { font-size:9px; color:var(--text-tertiary); font-family:'DM Mono',monospace; }
+    .fin-bar-amt { font-size:8.5px; color:var(--text-tertiary); font-family:'DM Mono',monospace; }
+    .fin-balance-row { display:flex; justify-content:space-between; align-items:center; padding:4px 0; }
+    .fin-balance-lbl { font-size:12px; color:var(--text-secondary); }
+    .fin-balance-val { font-size:12px; font-family:'DM Mono',monospace; color:var(--text-primary); }
+    .fin-ss { background:var(--bg-surface); border:1px solid var(--border); border-radius:8px; padding:14px 16px; }
+    .fin-ss-lbl { font-size:11px; color:var(--text-secondary); margin-bottom:6px; }
+    .fin-ss-val { font-size:22px; font-weight:600; font-family:'DM Mono',monospace; line-height:1.1; }
+    .fin-ss-note { font-size:10px; color:var(--text-tertiary); margin-top:5px; }
+    .fin-ss-bar-wrap { margin-top:6px; height:3px; background:var(--border); border-radius:2px; overflow:hidden; }
+    .fin-ss-bar { height:3px; border-radius:2px; }
   </style>
 </head>
 <body>
@@ -1685,14 +1716,243 @@
 
       <!-- SECCIÓN 6: Finanzas -->
       <section id="section-finanzas" class="section">
-        <div class="placeholder-area">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="color:var(--text-tertiary)">
-            <line x1="12" y1="1" x2="12" y2="23"/>
-            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-          </svg>
-          <p>Finanzas</p>
-          <span>Próxima fase de desarrollo</span>
+
+        <!-- IA Banner Finanzas -->
+        <div class="ai-banner">
+          <div class="ai-banner-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <div style="flex:1;min-width:0;">
+            <div class="ai-banner-sup">Zaguán IA · Estado financiero</div>
+            <div class="ai-banner-title">MRR récord en marzo (+27%) — balance positivo y tendencia al alza, vigila los cobros pendientes</div>
+            <p class="ai-banner-text">La empresa cierra marzo con el mejor mes histórico: <strong>12.400€ facturados</strong> (+27% vs febrero), dejando un resultado neto de 4.200€ con margen del 34%. El acumulado Q1 suma 30.600€, superando el objetivo trimestral en 2.600€. Punto de atención: <strong>9.800€ en facturas pendientes</strong>, incluyendo una vencida de <strong>Constructora Arco (2.200€)</strong>. Score de salud financiera 78/100 — crecimiento récord pero lastrado por concentración de clientes y el impago pendiente.</p>
+          </div>
+          <div class="ai-banner-date">Lun 23 mar</div>
         </div>
+
+        <!-- Fila superior: Score global + 4 KPIs -->
+        <div class="fin-top">
+
+          <!-- Score de salud financiera -->
+          <div class="fin-score-card">
+            <div class="fin-score-ring">
+              <div class="fin-score-inner">
+                <span class="fin-score-num">78</span>
+                <span class="fin-score-max">/100</span>
+              </div>
+            </div>
+            <div class="fin-score-name">Salud financiera</div>
+            <div class="fin-score-badge">SALUDABLE</div>
+          </div>
+
+          <div class="fin-kpi-card">
+            <div class="fin-kpi-lbl">Facturado · Marzo</div>
+            <div class="fin-kpi-val">12.400€</div>
+            <div class="fin-kpi-sub">Récord histórico</div>
+            <div class="fin-kpi-delta" style="color:var(--green);">↑ +27% vs febrero</div>
+          </div>
+
+          <div class="fin-kpi-card">
+            <div class="fin-kpi-lbl">Facturado · Q1 2026</div>
+            <div class="fin-kpi-val">30.600€</div>
+            <div class="fin-kpi-sub">Ene + Feb + Mar</div>
+            <div class="fin-kpi-delta" style="color:var(--green);">↑ +9% vs Q1 2025</div>
+          </div>
+
+          <div class="fin-kpi-card">
+            <div class="fin-kpi-lbl">Resultado · Marzo</div>
+            <div class="fin-kpi-val" style="color:var(--green);">+4.200€</div>
+            <div class="fin-kpi-sub">Margen neto 34%</div>
+            <div class="fin-kpi-delta" style="color:var(--text-tertiary);">Costes totales: 8.200€</div>
+          </div>
+
+          <div class="fin-kpi-card">
+            <div class="fin-kpi-lbl">Pendiente de cobro</div>
+            <div class="fin-kpi-val" style="color:var(--amber);">9.800€</div>
+            <div class="fin-kpi-sub">4 facturas emitidas</div>
+            <div class="fin-kpi-delta" style="color:var(--red);">⚠ 1 vencida · Arco</div>
+          </div>
+
+        </div>
+
+        <!-- Paneles: Facturación | Costes + Balance -->
+        <div class="fin-panels">
+
+          <!-- Desglose de facturación + tendencia -->
+          <div class="proy-panel">
+            <div class="proy-panel-title">Desglose de facturación</div>
+            <div class="proy-prog-row">
+              <div class="proy-prog-name">Marzo 2026</div>
+              <div class="proy-prog-bar-wrap"><div class="proy-prog-bar" style="width:100%;background:var(--green);"></div></div>
+              <div class="fin-prog-val">12.400€</div>
+            </div>
+            <div class="proy-prog-row">
+              <div class="proy-prog-name">Q1 2026</div>
+              <div class="proy-prog-bar-wrap"><div class="proy-prog-bar" style="width:100%;background:var(--blue);"></div></div>
+              <div class="fin-prog-val">30.600€</div>
+            </div>
+            <div class="proy-prog-row">
+              <div class="proy-prog-name">Obj. anual</div>
+              <div class="proy-prog-bar-wrap"><div class="proy-prog-bar" style="width:25.5%;background:var(--amber);"></div></div>
+              <div class="fin-prog-val" style="color:var(--amber);">25.5%</div>
+            </div>
+            <div style="font-size:10.5px;color:var(--text-tertiary);text-align:right;margin-top:2px;">30.600€ de 120.000€ objetivo anual</div>
+
+            <div class="proy-panel-title" style="margin-top:18px;margin-bottom:8px;">Tendencia · últimos 6 meses</div>
+            <div class="fin-trend-bars">
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">7.2k</span>
+                <div class="fin-bar" style="height:30px;opacity:.55;"></div>
+                <div class="fin-bar-lbl">Oct</div>
+              </div>
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">8.6k</span>
+                <div class="fin-bar" style="height:36px;opacity:.65;"></div>
+                <div class="fin-bar-lbl">Nov</div>
+              </div>
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">6.8k</span>
+                <div class="fin-bar" style="height:28px;background:var(--text-tertiary);opacity:.4;"></div>
+                <div class="fin-bar-lbl">Dic</div>
+              </div>
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">8.4k</span>
+                <div class="fin-bar" style="height:35px;opacity:.72;"></div>
+                <div class="fin-bar-lbl">Ene</div>
+              </div>
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">9.8k</span>
+                <div class="fin-bar" style="height:41px;opacity:.85;"></div>
+                <div class="fin-bar-lbl">Feb</div>
+              </div>
+              <div class="fin-bar-col">
+                <span class="fin-bar-amt">12.4k</span>
+                <div class="fin-bar" style="height:52px;background:var(--green);"></div>
+                <div class="fin-bar-lbl">Mar ★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estructura de costes + Balance -->
+          <div class="proy-panel">
+            <div class="proy-panel-title">Estructura de costes · Marzo</div>
+            <div class="proy-prog-row">
+              <div class="proy-prog-name">Nóminas</div>
+              <div class="proy-prog-bar-wrap"><div class="proy-prog-bar" style="width:80%;background:var(--blue);"></div></div>
+              <div class="fin-prog-val">6.600€</div>
+            </div>
+            <div class="proy-prog-row">
+              <div class="proy-prog-name">Operativos</div>
+              <div class="proy-prog-bar-wrap"><div class="proy-prog-bar" style="width:19.5%;background:var(--text-tertiary);opacity:.6;"></div></div>
+              <div class="fin-prog-val">1.600€</div>
+            </div>
+
+            <!-- Desglose nóminas -->
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-top:4px;">
+              <div class="proy-panel-title" style="margin-bottom:9px;">Desglose nóminas</div>
+              <div style="display:flex;flex-direction:column;gap:6px;">
+                <div class="fin-balance-row">
+                  <span class="fin-balance-lbl">Eduardo D.</span>
+                  <span class="fin-balance-val">2.600€</span>
+                </div>
+                <div class="fin-balance-row">
+                  <span class="fin-balance-lbl">Jesús R.</span>
+                  <span class="fin-balance-val">2.200€</span>
+                </div>
+                <div class="fin-balance-row">
+                  <span class="fin-balance-lbl">María G.</span>
+                  <span class="fin-balance-val">1.800€</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Balance operativo -->
+            <div style="border-top:1px solid var(--border);padding-top:12px;margin-top:12px;">
+              <div class="proy-panel-title" style="margin-bottom:9px;">Balance operativo · Marzo</div>
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <div class="fin-balance-row">
+                  <span class="fin-balance-lbl">Ingresos</span>
+                  <span class="fin-balance-val">12.400€</span>
+                </div>
+                <div class="fin-balance-row">
+                  <span class="fin-balance-lbl">Gastos totales</span>
+                  <span class="fin-balance-val" style="color:var(--red);">− 8.200€</span>
+                </div>
+                <div class="fin-balance-row" style="border-top:1px solid var(--border);padding-top:8px;margin-top:3px;">
+                  <span style="font-size:12.5px;font-weight:600;color:var(--text-primary);">Resultado neto</span>
+                  <span style="font-size:13px;font-family:'DM Mono',monospace;color:var(--green);font-weight:700;">+ 4.200€</span>
+                </div>
+                <div class="fin-balance-row" style="margin-top:2px;">
+                  <span style="font-size:11.5px;color:var(--text-tertiary);">Balance acumulado Q1</span>
+                  <span style="font-size:12px;font-family:'DM Mono',monospace;color:var(--green);font-weight:600;">+ 6.000€</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sub-scores de salud financiera -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;">
+
+          <div class="fin-ss">
+            <div class="fin-ss-lbl">Liquidez</div>
+            <div class="fin-ss-val" style="color:var(--green);">82</div>
+            <div class="fin-ss-bar-wrap"><div class="fin-ss-bar" style="width:82%;background:var(--green);"></div></div>
+            <div class="fin-ss-note">Flujo de caja positivo</div>
+          </div>
+
+          <div class="fin-ss">
+            <div class="fin-ss-lbl">Rentabilidad</div>
+            <div class="fin-ss-val" style="color:var(--amber);">74</div>
+            <div class="fin-ss-bar-wrap"><div class="fin-ss-bar" style="width:74%;background:var(--amber);"></div></div>
+            <div class="fin-ss-note">Margen 34% — mejorable</div>
+          </div>
+
+          <div class="fin-ss">
+            <div class="fin-ss-lbl">Crecimiento</div>
+            <div class="fin-ss-val" style="color:var(--green);">88</div>
+            <div class="fin-ss-bar-wrap"><div class="fin-ss-bar" style="width:88%;background:var(--green);"></div></div>
+            <div class="fin-ss-note">+27% MoM · récord histórico</div>
+          </div>
+
+          <div class="fin-ss">
+            <div class="fin-ss-lbl">Estabilidad</div>
+            <div class="fin-ss-val" style="color:var(--amber);">68</div>
+            <div class="fin-ss-bar-wrap"><div class="fin-ss-bar" style="width:68%;background:var(--amber);"></div></div>
+            <div class="fin-ss-note">Concentración en 3 clientes</div>
+          </div>
+
+        </div>
+
+        <!-- Alertas financieras -->
+        <div class="proy-panel">
+          <div class="proy-panel-title">Alertas financieras · Acciones recomendadas</div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--red-bg);color:var(--red);">VENCIDO</div>
+            <div>
+              <div class="proy-risk-name">Factura de Constructora Arco vencida hace 23 días — 2.200€</div>
+              <div class="proy-risk-detail">El cliente lleva 3 semanas sin comunicación. Escalar a reclamación formal esta semana o pausar cualquier servicio activo hasta regularización del pago.</div>
+            </div>
+          </div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--amber-bg);color:var(--amber);">PENDIENTE</div>
+            <div>
+              <div class="proy-risk-name">7.600€ en 3 facturas enviadas — seguimiento esta semana</div>
+              <div class="proy-risk-detail">Biplaza (3.200€, 8 días) · Hotel Neptuno (2.400€, 6 días) · Grupo Vértice (2.000€, 4 días). Dentro de plazo normal pero requieren confirmación antes del cierre de mes.</div>
+            </div>
+          </div>
+          <div class="proy-risk-row">
+            <div class="proy-risk-badge" style="background:var(--green-bg);color:var(--green);">PROYECCIÓN</div>
+            <div>
+              <div class="proy-risk-name">Si el pipeline convierte al 67% en abril — proyección 19.200€</div>
+              <div class="proy-risk-detail">Tres meses consecutivos de crecimiento. Si Altafit (8.200€) y Bellvitge (5.600€) cierran en abril, el mes superaría por primera vez la barrera de los 15.000€ mensuales.</div>
+            </div>
+          </div>
+        </div>
+
       </section>
 
       <!-- SECCIÓN 7: Objetivos -->
